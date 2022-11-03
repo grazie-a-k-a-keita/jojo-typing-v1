@@ -1,22 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PlayModal = (props) => {
-  // Enter or Spaceでゲーム開始 ~ 60sで終了
+  // Enter or Space でゲーム開始 + Escape で強制終了
   window.document.onkeydown = function (event) {
-    if (event.key === "Enter" || "Space") {
+    if (event.key === ("Enter" || "Space")) {
       props.setShowModal(false);
       props.setShowGame(true);
       setTimeout(() => {
         gameEnd();
-      }, 60 * 1000);
+      }, 5 * 1000);
+    } else if (event.key === "Escape") {
+      props.setSubHeading(props.subHeading);
+      props.setShowModal(true);
+      props.setShowGame(false);
     }
   };
-  //
+  // ゲーム終了時の処理（SCORE画面に遷移）
+  const navigate = useNavigate();
   const gameEnd = () => {
-    props.setSubHeading("SCORE");
-    props.setShowModal(true);
-    props.setShowGame(false);
+    console.log("end");
+    navigate("/score");
   };
   //
   return (
@@ -25,7 +29,6 @@ const PlayModal = (props) => {
         <div tabIndex={1} id="overlay" style={overlay}>
           <div id="modalContent" style={modalContent}>
             <p>{props.subHeading}</p>
-
             <Link to="/">ホームに戻る</Link>
           </div>
         </div>
@@ -35,7 +38,6 @@ const PlayModal = (props) => {
     </>
   );
 };
-
 //css
 const modalContent = {
   background: "white",

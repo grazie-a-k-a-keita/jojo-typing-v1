@@ -1,8 +1,8 @@
 import React from "react";
-import "./css/App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Play from "./Pages/Play";
+import Score from "./Pages/Score";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
           <Route path="/play3" element={<Play />}></Route>
           <Route path="/play4" element={<Play />}></Route>
           <Route path="/play5" element={<Play />}></Route>
+          <Route path="/score" element={<Score />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

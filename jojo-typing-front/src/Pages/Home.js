@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import HomeModal from "../Modal/HomeModal";
+import HowToPlayModal from "../Modal/HowToPlayModal";
+import SettingModal from "../Modal/SettingModal";
 
 function Home() {
   //
-  const [showModal, setShowModal] = useState(false);
-  const [subHeading, setSubHeading] = useState("");
+  const [showModal, setShowHowToPlayModal] = useState(false);
+  const [settingModal, setShowSettingModal] = useState(false);
   //
   const showHowToPlayModal = () => {
-    setSubHeading("遊び方");
-    setShowModal(true);
+    setShowHowToPlayModal(true);
   };
   const showSettingModal = () => {
-    setSubHeading("設定");
-    setShowModal(true);
+    setShowSettingModal(true);
   };
   //
   return (
@@ -28,11 +27,15 @@ function Home() {
       <button onClick={showHowToPlayModal}>遊び方</button>
       <button onClick={showSettingModal}>設定</button>
       <div>Footer</div>
-      <HomeModal
+      <HowToPlayModal
         showFlag={showModal}
-        setShowModal={setShowModal}
-        subHeading={subHeading}
-        setSubHeading={setSubHeading}
+        setShowModal={setShowHowToPlayModal}
+        subHeading="遊び方"
+      />
+      <SettingModal
+        showFlag={settingModal}
+        setShowModal={setShowSettingModal}
+        subHeading="設定"
       />
     </>
   );

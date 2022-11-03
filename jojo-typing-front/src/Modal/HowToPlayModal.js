@@ -1,10 +1,9 @@
 import React from "react";
 
-const HowToPlay = (props) => {
+const HowToPlayModal = (props) => {
   //
   const closeModal = () => {
     props.setShowModal(false);
-    props.setSubHeading("");
   };
   //
   return (
@@ -44,4 +43,4 @@ const overlay = {
   justifyContent: "center",
 };
 
-export default HowToPlay;
+export default HowToPlayModal;
