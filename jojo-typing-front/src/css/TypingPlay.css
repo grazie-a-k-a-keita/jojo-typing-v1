@@ -1,0 +1,53 @@
+.timeGauge {
+  position: relative;
+  width: 200px;
+  height: 10px;
+  background: #eee;
+}
+.timeGauge:before {
+  content: "";
+  width: 200px;
+  height: 10px;
+  background: #eee;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.timeGauge:after {
+  content: "";
+  width: 15px;
+  height: 10px;
+  background: #333;
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  animation-name: gaugeGo;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* アニメーション */
+@-webkit-keyframes gaugeGo {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+@keyframes gaugeGo {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 200px;
+  }
+}
