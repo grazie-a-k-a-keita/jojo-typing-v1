@@ -2,7 +2,7 @@ import React from "react";
 import "./css/App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
-import Play3 from "./Pages/Play3";
+import Play from "./Pages/Play";
 
 function App() {
   return (
@@ -10,7 +10,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/play3" element={<Play3 />}></Route>
+          <Route path="/play1" element={<Play />}></Route>
+          <Route path="/play2" element={<Play />}></Route>
+          <Route path="/play3" element={<Play />}></Route>
+          <Route path="/play4" element={<Play />}></Route>
+          <Route path="/play5" element={<Play />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

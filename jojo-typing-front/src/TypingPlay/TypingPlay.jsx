@@ -1,10 +1,16 @@
 import React from "react";
 
-const TypingPlay = () => {
+const TypingPlay = (props) => {
   return (
     <>
-      <div>タイピングゲーム</div>
-      <div>ゲージ</div>
+      {props.showGame ? (
+        <>
+          <div>タイピングゲーム</div>
+          <div>ゲージ</div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
