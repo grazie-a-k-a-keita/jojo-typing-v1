@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import TypingGame from "../TypingPlay/TypingPlay";
+import PlayModal from "../Modal/PlayModal";
 
 function Play3() {
+  const [showModal, setShowModal] = useState(true);
+  const [subHeading, setSubHeading] = useState("○部コース");
   return (
-    <div>
+    <>
       <div>Header</div>
-      <div>ゲーム部分</div>
+      <TypingGame />
       <div>Footer</div>
-      <div>各種モーダル</div>
-    </div>
+      <PlayModal
+        showFlag={showModal}
+        setShowModal={setShowModal}
+        subHeading={subHeading}
+        setSubHeading={setSubHeading}
+      />
+    </>
   );
 }
 
