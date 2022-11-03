@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import HomeModal from "../Modal/HomeModal";
 
 function Home() {
+  //
   const [showModal, setShowModal] = useState(false);
   const [subHeading, setSubHeading] = useState("");
+  //
   const showHowToPlayModal = () => {
     setSubHeading("遊び方");
     setShowModal(true);
@@ -13,6 +15,7 @@ function Home() {
     setSubHeading("設定");
     setShowModal(true);
   };
+  //
   return (
     <>
       <div>Header</div>

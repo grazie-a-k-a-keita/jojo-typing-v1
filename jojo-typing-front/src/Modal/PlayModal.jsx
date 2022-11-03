@@ -2,18 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const PlayModal = (props) => {
+  // Enter or Spaceでゲーム開始 ~ 60sで終了
   window.document.onkeydown = function (event) {
     if (event.key === "Enter" || "Space") {
       props.setShowModal(false);
+      props.setShowGame(true);
       setTimeout(() => {
         gameEnd();
-      }, 3 * 1000);
+      }, 60 * 1000);
     }
   };
+  //
   const gameEnd = () => {
     props.setSubHeading("SCORE");
     props.setShowModal(true);
+    props.setShowGame(false);
   };
+  //
   return (
     <>
       {props.showFlag ? (

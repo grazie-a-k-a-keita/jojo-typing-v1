@@ -1,10 +1,12 @@
 import React from "react";
 
 const HowToPlay = (props) => {
+  //
   const closeModal = () => {
     props.setShowModal(false);
     props.setSubHeading("");
   };
+  //
   return (
     <>
       {props.showFlag ? (
