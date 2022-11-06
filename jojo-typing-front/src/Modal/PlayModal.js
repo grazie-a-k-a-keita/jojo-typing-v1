@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const PlayModal = (props) => {
-  // Enter or Space でゲーム開始 + Escape で強制終了
+  //
+  const timeOut = setTimeout(() => {
+    gameEnd();
+    // 〇〇秒 * 1000
+  }, 60 * 1000);
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeOut);
+    };
+  });
+  // Enter or Space でゲーム開始
   window.document.onkeydown = function (event) {
-    if (event.key === ("Enter" || "Space")) {
+    if (event.key === "Enter" || event.key === " ") {
       props.setShowModal(false);
       props.setShowGame(true);
-      setTimeout(() => {
-        gameEnd();
-      }, 5 * 1000);
-    } else if (event.key === "Escape") {
-      props.setSubHeading(props.subHeading);
-      props.setShowModal(true);
-      props.setShowGame(false);
+      setTimeout(timeOut);
     }
   };
   // ゲーム終了時の処理（SCORE画面に遷移）
   const navigate = useNavigate();
   const gameEnd = () => {
-    console.log("end");
     navigate("/score");
+    clearTimeout(timeOut);
   };
   //
   return (
