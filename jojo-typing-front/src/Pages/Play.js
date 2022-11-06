@@ -14,9 +14,6 @@ function Play() {
   //
   return (
     <>
-      <div>Header</div>
-      <TypingGame showGame={showGame} />
-      <div>Footer</div>
       <PlayModal
         showFlag={showModal}
         setShowModal={setShowModal}
@@ -25,6 +22,16 @@ function Play() {
         showGame={showGame}
         setShowGame={setShowGame}
       />
+      <div>Header</div>
+      <TypingGame
+        showFlag={showModal}
+        setShowModal={setShowModal}
+        subHeading={subHeading}
+        setSubHeading={setSubHeading}
+        showGame={showGame}
+        setShowGame={setShowGame}
+      />
+      <div>Footer</div>
     </>
   );
 }

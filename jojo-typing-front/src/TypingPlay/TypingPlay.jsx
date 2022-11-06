@@ -8,7 +8,14 @@ const TypingPlay = (props) => {
     <>
       {props.showGame ? (
         <>
-          <PalyingGame />
+          <PalyingGame
+            showFlag={props.showModal}
+            setShowModal={props.setShowModal}
+            subHeading={props.subHeading}
+            setSubHeading={props.setSubHeading}
+            showGame={props.showGame}
+            setShowGame={props.setShowGame}
+          />
           <div className="timeGauge"></div>
         </>
       ) : (

@@ -6,7 +6,7 @@ import Route from "./Route";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <Route />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Route />
+  // </React.StrictMode>
 );
