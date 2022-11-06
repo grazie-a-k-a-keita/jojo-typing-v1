@@ -9,7 +9,8 @@ const PlayModal = (props) => {
       props.setShowGame(true);
       setTimeout(() => {
         gameEnd();
-      }, 5 * 1000);
+        // 〇〇秒 * 1000
+      }, 60 * 1000);
     } else if (event.key === "Escape") {
       props.setSubHeading(props.subHeading);
       props.setShowModal(true);

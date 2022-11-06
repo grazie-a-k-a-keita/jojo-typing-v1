@@ -1,4 +1,5 @@
 import React from "react";
+import PalyingGame from "./PalyingGame";
 import "../css/TypingPlay.css";
 
 const TypingPlay = (props) => {
@@ -7,7 +8,7 @@ const TypingPlay = (props) => {
     <>
       {props.showGame ? (
         <>
-          <div id="game">タイピングゲーム部分</div>
+          <PalyingGame />
           <div className="timeGauge"></div>
         </>
       ) : (
