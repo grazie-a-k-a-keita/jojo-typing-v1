@@ -1,6 +1,6 @@
 import React from "react";
 import PalyingGame from "./PalyingGame";
-import "../css/TypingPlay.css";
+import TimeGauge from "./TimeGauge";
 
 const TypingPlay = (props) => {
   //
@@ -16,7 +16,7 @@ const TypingPlay = (props) => {
             showGame={props.showGame}
             setShowGame={props.setShowGame}
           />
-          <div className="timeGauge"></div>
+          <TimeGauge />
         </>
       ) : (
         <></>
