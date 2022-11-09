@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import SubHeading from "../Components/SubHeading";
+import ButtonBackToHome from "../Components/Button-BackToHome";
 
 const ScoreModal = () => {
   return (
     <>
       <div tabIndex={1} id="overlay" style={overlay}>
         <div id="modalContent" style={modalContent}>
-          <p>SCORE</p>
-          <Link to="/">ホームに戻る</Link>
+          <SubHeading subHeading="SCORE" />
+          <ButtonBackToHome />
         </div>
       </div>
     </>

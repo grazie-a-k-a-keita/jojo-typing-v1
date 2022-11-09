@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "../Components/Header";
+import MainTitle from "../Components/MainTitle";
+import Footer from "../Components/Footer";
 import HowToPlayModal from "../Modal/HowToPlayModal";
 import SettingModal from "../Modal/SettingModal";
 
@@ -17,8 +20,8 @@ function Home() {
   //
   return (
     <>
-      <div>Header</div>
-      <div>Title</div>
+      <Header />
+      <MainTitle />
       <Link to="/play1">1部</Link>
       <Link to="/play2">2部</Link>
       <Link to="/play3">3部</Link>
@@ -26,7 +29,7 @@ function Home() {
       <Link to="/play5">5部</Link>
       <button onClick={showHowToPlayModal}>遊び方</button>
       <button onClick={showSettingModal}>設定</button>
-      <div>Footer</div>
+      <Footer />
       <HowToPlayModal
         showFlag={showModal}
         setShowModal={setShowHowToPlayModal}

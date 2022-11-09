@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import TypingGame from "../TypingPlay/TypingPlay";
 import PlayModal from "../Modal/PlayModal";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 function Play() {
   // Pathから部数を取得
@@ -22,7 +24,7 @@ function Play() {
         showGame={showGame}
         setShowGame={setShowGame}
       />
-      <div>Header</div>
+      <Header />
       <TypingGame
         showFlag={showModal}
         setShowModal={setShowModal}
@@ -31,7 +33,7 @@ function Play() {
         showGame={showGame}
         setShowGame={setShowGame}
       />
-      <div>Footer</div>
+      <Footer />
     </>
   );
 }
