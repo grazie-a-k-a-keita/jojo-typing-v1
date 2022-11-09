@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import SubHeading from "../Components/SubHeading";
+import ButtonBackToHome from "../Components/Button-BackToHome";
 
 const PlayModal = (props) => {
   //
@@ -32,8 +34,8 @@ const PlayModal = (props) => {
       {props.showFlag ? (
         <div tabIndex={1} id="overlay" style={overlay}>
           <div id="modalContent" style={modalContent}>
-            <p>{props.subHeading}</p>
-            <Link to="/">ホームに戻る</Link>
+            <SubHeading subHeading={props.subHeading} />
+            <ButtonBackToHome />
           </div>
         </div>
       ) : (

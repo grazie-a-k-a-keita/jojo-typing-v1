@@ -1,13 +1,14 @@
 import React from "react";
 import ScoreModal from "../Modal/ScoreModal";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 const Score = () => {
   return (
     <>
-      <div>Header</div>
+      <Header />
       <ScoreModal />
-      <div>Footer</div>
-      <></>
+      <Footer />
     </>
   );
 };

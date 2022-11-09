@@ -1,4 +1,5 @@
 import React from "react";
+import SubHeading from "../Components/SubHeading";
 
 const SettingModal = (props) => {
   //
@@ -11,7 +12,7 @@ const SettingModal = (props) => {
       {props.showFlag ? (
         <div id="overlay" style={overlay}>
           <div id="modalContent" style={modalContent}>
-            <p>{props.subHeading}</p>
+            <SubHeading subHeading={props.subHeading} />
             <button onClick={closeModal}>OK</button>
             <button onClick={closeModal}>戻る</button>
           </div>
