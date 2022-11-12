@@ -25,14 +25,16 @@ function Play() {
         setShowGame={setShowGame}
       />
       <Header />
-      <TypingGame
-        showFlag={showModal}
-        setShowModal={setShowModal}
-        subHeading={subHeading}
-        setSubHeading={setSubHeading}
-        showGame={showGame}
-        setShowGame={setShowGame}
-      />
+      <div class="w-3/5 mx-auto">
+        <TypingGame
+          showFlag={showModal}
+          setShowModal={setShowModal}
+          subHeading={subHeading}
+          setSubHeading={setSubHeading}
+          showGame={showGame}
+          setShowGame={setShowGame}
+        />
+      </div>
       <Footer />
     </>
   );

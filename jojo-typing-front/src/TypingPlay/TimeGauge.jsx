@@ -4,7 +4,7 @@ import "../css/TimeGauge.css";
 const TimeGauge = () => {
   return (
     <>
-      <div className="timeGauge"></div>
+      <div className="timeGauge mt-4"></div>
     </>
   );
 };

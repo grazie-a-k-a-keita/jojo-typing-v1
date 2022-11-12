@@ -1,11 +1,11 @@
 import React from "react";
+import "../css/MainTitle.css";
 
 const MainTitle = () => {
   return (
     <>
-      <div>JOJOタイピング</div>
+      <p id="mainTitle">JOJOタイピング</p>
     </>
   );
 };
-
 export default MainTitle;

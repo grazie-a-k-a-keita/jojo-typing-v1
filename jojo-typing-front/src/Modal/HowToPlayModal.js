@@ -1,5 +1,7 @@
 import React from "react";
 import SubHeading from "../Components/SubHeading";
+import "../css/button.css";
+import "../css/modal.css";
 
 const HowToPlayModal = (props) => {
   //
@@ -10,10 +12,12 @@ const HowToPlayModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div id="overlay" style={overlay}>
-          <div id="modalContent" style={modalContent}>
+        <div id="overlay">
+          <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
-            <button onClick={closeModal}>戻る</button>
+            <button onClick={closeModal} class="button">
+              戻る
+            </button>
           </div>
         </div>
       ) : (
@@ -21,26 +25,6 @@ const HowToPlayModal = (props) => {
       )}
     </>
   );
-};
-
-//css
-const modalContent = {
-  background: "white",
-  padding: "10px",
-  borderRadius: "3px",
-};
-
-const overlay = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundColor: "rgba(0,0,0,0.5)",
-
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 };
 
 export default HowToPlayModal;
