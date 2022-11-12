@@ -11,8 +11,8 @@ const HowToPlayModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div class="overlay">
-          <div class="modalContent">
+        <div id="overlay" style={overlay}>
+          <div id="modalContent" style={modalContent}>
             <SubHeading subHeading={props.subHeading} />
             <button onClick={closeModal} class="button">
               戻る
