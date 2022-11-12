@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <nav class="bg-sky-700 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
           <div class="flex flex-wrap justify-between items-center mx-auto">
             <Link to="/" class="flex items-center">
               <img

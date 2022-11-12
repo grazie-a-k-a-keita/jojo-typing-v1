@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SubHeading from "../Components/SubHeading";
 import ButtonBackToHome from "../Components/Button-BackToHome";
+import "../css/modal.css";
 
 const PlayModal = (props) => {
   //
@@ -32,8 +33,8 @@ const PlayModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div tabIndex={1} id="overlay" style={overlay}>
-          <div id="modalContent" style={modalContent}>
+        <div tabIndex={1} id="overlay">
+          <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
             <ButtonBackToHome />
           </div>
@@ -43,25 +44,6 @@ const PlayModal = (props) => {
       )}
     </>
   );
-};
-//css
-const modalContent = {
-  background: "white",
-  padding: "10px",
-  borderRadius: "3px",
-};
-
-const overlay = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundColor: "rgba(0,0,0,0.5)",
-
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 };
 
 export default PlayModal;

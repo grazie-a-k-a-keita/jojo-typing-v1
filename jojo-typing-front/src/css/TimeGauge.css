@@ -1,13 +1,12 @@
 .timeGauge {
   position: relative;
-  width: 200px;
-  height: 10px;
-  background: #eee;
+  height: 1rem;
+  background: #b0c4de;
 }
+
 .timeGauge:before {
   content: "";
-  width: 200px;
-  height: 10px;
+  height: 1rem;
   background: #eee;
   position: absolute;
   left: 0;
@@ -17,8 +16,8 @@
 .timeGauge:after {
   content: "";
   width: 15px;
-  height: 10px;
-  background: #333;
+  height: 1rem;
+  background: #191970;
   position: absolute;
   left: 0%;
   bottom: 0;
@@ -34,10 +33,10 @@
     width: 0px;
   }
   50% {
-    width: 100px;
+    width: 50%;
   }
   100% {
-    width: 200px;
+    width: 100%;
   }
 }
 @keyframes gaugeGo {
@@ -45,9 +44,9 @@
     width: 0px;
   }
   50% {
-    width: 100px;
+    width: 50%;
   }
   100% {
-    width: 200px;
+    width: 100%;
   }
 }

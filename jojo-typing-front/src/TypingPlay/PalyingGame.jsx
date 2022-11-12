@@ -65,10 +65,12 @@ const PalyingGame = (props) => {
   //
   return (
     <>
-      <p id="checkText">
-        <span id="correctText">{correctText}</span>
-        {checkText}
-      </p>
+      <div class="gameBox">
+        <p id="checkText" class="break-normal">
+          <span id="correctText">{correctText}</span>
+          {checkText}
+        </p>
+      </div>
     </>
   );
 };
