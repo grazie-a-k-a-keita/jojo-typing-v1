@@ -1,42 +1,41 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import SubHeading from "../Components/SubHeading";
 import ButtonBackToHome from "../Components/Button-BackToHome";
 import "../css/modal.css";
+import "../css/flashText.css";
 
 const PlayModal = (props) => {
-  //
-  const timeOut = setTimeout(() => {
-    gameEnd();
-    // 〇〇秒 * 1000
-  }, 60 * 1000);
-  useEffect(() => {
-    return () => {
-      clearTimeout(timeOut);
-    };
-  });
-  // Enter or Space でゲーム開始
   window.document.onkeydown = function (event) {
     if (event.key === "Enter" || event.key === " ") {
       props.setShowModal(false);
       props.setShowGame(true);
-      setTimeout(timeOut);
+      props.start();
     }
   };
-  // ゲーム終了時の処理（SCORE画面に遷移）
-  const navigate = useNavigate();
-  const gameEnd = () => {
-    navigate("/score");
-    clearTimeout(timeOut);
-  };
-  //
   return (
     <>
       {props.showFlag ? (
         <div tabIndex={1} id="overlay">
           <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
-            <ButtonBackToHome />
+
+            <div class="p-8">
+              <p class="text-center font-semibold">
+                【Space か Enter キーを押すとスタートします】
+              </p>
+            </div>
+            <div class="p-8">
+              <p class="flashText">Press "Space" or "Enter" key to start!!</p>
+            </div>
+            <div class="p-8">
+              <p class="text-center">
+                ※ゲーム中はescキーでホーム画面に戻ります。
+              </p>
+            </div>
+
+            <div class="p-8">
+              <ButtonBackToHome />
+            </div>
           </div>
         </div>
       ) : (

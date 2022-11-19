@@ -47,7 +47,8 @@ const PalyingGame = (props) => {
       props.setSubHeading(props.subHeading);
       props.setShowModal(true);
       props.setShowGame(false);
-      clearTimeout();
+      props.stop();
+      props.setCount(0);
     } else if (event.key === checkText[0]) {
       setCorrectText(correctText + event.key);
       setCheckText(checkText.splice(1));
@@ -65,8 +66,8 @@ const PalyingGame = (props) => {
   //
   return (
     <>
-      <div class="gameBox">
-        <p id="checkText" class="break-normal">
+      <div className="gameBox">
+        <p id="checkText" className="break-normal">
           <span id="correctText">{correctText}</span>
           {checkText}
         </p>

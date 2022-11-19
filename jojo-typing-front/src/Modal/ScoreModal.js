@@ -9,7 +9,10 @@ const ScoreModal = () => {
       <div tabIndex={1} id="overlay">
         <div id="modalContent">
           <SubHeading subHeading="SCORE" />
-          <ButtonBackToHome />
+
+          <div class="p-8">
+            <ButtonBackToHome />
+          </div>
         </div>
       </div>
     </>
