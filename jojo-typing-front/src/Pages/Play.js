@@ -49,10 +49,7 @@ function Play() {
         setSubHeading={setSubHeading}
         showGame={showGame}
         setShowGame={setShowGame}
-        count={count}
-        setCount={setCount}
         start={() => start()}
-        stop={() => stop()}
       />
       <Header />
       <div class="w-3/5 mx-auto">
