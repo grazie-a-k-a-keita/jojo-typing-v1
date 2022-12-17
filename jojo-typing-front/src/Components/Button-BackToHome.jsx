@@ -5,7 +5,7 @@ import "../css/button.css";
 const ButtonBackToHome = () => {
   return (
     <>
-      <Link to="/" class="button">
+      <Link to="/" className="button">
         ホームに戻る
       </Link>
     </>

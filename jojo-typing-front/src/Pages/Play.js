@@ -51,7 +51,7 @@ function Play() {
         start={() => start()}
       />
       <Header />
-      <div class="w-3/5 mx-auto">
+      <div className="w-3/5 mx-auto">
         <TypingGame
           showFlag={showModal}
           setShowModal={setShowModal}
