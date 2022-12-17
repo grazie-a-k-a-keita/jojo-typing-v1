@@ -19,21 +19,23 @@ const PlayModal = (props) => {
           <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
 
-            <div class="p-8">
-              <p class="text-center font-semibold">
+            <div className="p-8">
+              <p className="text-center font-semibold">
                 【Space か Enter キーを押すとスタートします】
               </p>
             </div>
-            <div class="p-8">
-              <p class="flashText">Press "Space" or "Enter" key to start!!</p>
+            <div className="p-8">
+              <p className="flashText">
+                Press "Space" or "Enter" key to start!!
+              </p>
             </div>
-            <div class="p-8">
-              <p class="text-center">
+            <div className="p-8">
+              <p className="text-center">
                 ※ゲーム中はescキーでホーム画面に戻ります。
               </p>
             </div>
 
-            <div class="p-8">
+            <div className="p-8">
               <ButtonBackToHome />
             </div>
           </div>

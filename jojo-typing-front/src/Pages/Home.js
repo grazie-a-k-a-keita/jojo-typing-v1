@@ -22,31 +22,31 @@ function Home() {
   return (
     <>
       <Header />
-      <div class="w-3/5 mx-auto">
+      <div className="w-3/5 mx-auto">
         <MainTitle />
-        <div class="flex justify-center">
-          <Link to="/play1" class="button">
+        <div className="flex justify-center">
+          <Link to="/play1" className="button">
             1部
           </Link>
-          <Link to="/play2" class="button">
+          <Link to="/play2" className="button">
             2部
           </Link>
-          <Link to="/play3" class="button">
+          <Link to="/play3" className="button">
             3部
           </Link>
-          <Link to="/play4" class="button">
+          <Link to="/play4" className="button">
             4部
           </Link>
-          <Link to="/play5" class="button">
+          <Link to="/play5" className="button">
             5部
           </Link>
         </div>
-        <div class="flex justify-center">
-          <button onClick={showHowToPlayModal} class="mr-8">
-            <span class="button">遊び方</span>
+        <div className="flex justify-center">
+          <button onClick={showHowToPlayModal} className="mr-8">
+            <span className="button">遊び方</span>
           </button>
-          <button onClick={showSettingModal} class="ml-8">
-            <span class="button">設定</span>
+          <button onClick={showSettingModal} className="ml-8">
+            <span className="button">設定</span>
           </button>
         </div>
       </div>
