@@ -1,0 +1,19 @@
+.flashText {
+  color: #191970;
+  text-decoration-line: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  text-align: center;
+  animation: flash 2s linear infinite;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

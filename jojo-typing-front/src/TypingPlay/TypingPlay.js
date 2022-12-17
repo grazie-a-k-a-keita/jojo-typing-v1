@@ -15,6 +15,9 @@ const TypingPlay = (props) => {
             setSubHeading={props.setSubHeading}
             showGame={props.showGame}
             setShowGame={props.setShowGame}
+            count={props.count}
+            setCount={props.setCount}
+            stop={() => props.stop()}
           />
           <TimeGauge />
         </>
