@@ -7,7 +7,7 @@ import HowToPlayModal from "../Modal/HowToPlayModal";
 import SettingModal from "../Modal/SettingModal";
 import "../css/button.css";
 
-function Home() {
+const Home = (props) => {
   //
   const [showModal, setShowHowToPlayModal] = useState(false);
   const [settingModal, setShowSettingModal] = useState(false);
@@ -60,9 +60,17 @@ function Home() {
         showFlag={settingModal}
         setShowModal={setShowSettingModal}
         subHeading="設定"
+        bgm={props.bgm}
+        setBgm={props.setBgm}
+        se={props.se}
+        setSe={props.setSe}
+        typeSound={props.typeSound}
+        setTypeSound={props.setTypeSound}
+        missSound={props.missSound}
+        setMissSound={props.setMissSound}
       />
     </>
   );
-}
+};
 
 export default Home;
