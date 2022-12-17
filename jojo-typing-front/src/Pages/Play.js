@@ -41,7 +41,6 @@ function Play() {
   //
   return (
     <>
-      <div>count = {count}</div>
       <PlayModal
         showFlag={showModal}
         setShowModal={setShowModal}
