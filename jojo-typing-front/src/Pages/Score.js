@@ -3,11 +3,16 @@ import ScoreModal from "../Modal/ScoreModal";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-const Score = () => {
+const Score = (props) => {
   return (
     <>
       <Header />
-      <ScoreModal />
+      <ScoreModal
+        correctCount={props.correctCount}
+        setCorrectCount={props.setCorrectCount}
+        missCount={props.missCount}
+        setMissCount={props.setMissCount}
+      />
       <Footer />
     </>
   );

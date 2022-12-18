@@ -18,6 +18,10 @@ const TypingPlay = (props) => {
             count={props.count}
             setCount={props.setCount}
             stop={() => props.stop()}
+            correctCount={props.correctCount}
+            setCorrectCount={props.setCorrectCount}
+            missCount={props.missCount}
+            setMissCount={props.setMissCount}
           />
           <TimeGauge />
         </>

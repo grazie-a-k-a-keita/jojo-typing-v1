@@ -3,12 +3,13 @@ import SubHeading from "../Components/SubHeading";
 import ButtonBackToHome from "../Components/Button-BackToHome";
 import "../css/modal.css";
 
-const ScoreModal = () => {
+const ScoreModal = (props) => {
   // SCOREデータ
   const rank = "S";
   const ranking = "18位";
-  const typingSpeed = "5.1/s";
-  const missTouch = "4回";
+  // タイピング速度
+  const typeSpeed = props.correctCount / 60;
+  const typeSpeedContext = typeSpeed.toFixed(2) + "/s";
 
   return (
     <>
@@ -28,17 +29,22 @@ const ScoreModal = () => {
           </div>
           <div className="p-8">
             <p className="text-center font-semibold">
-              タイピング速度：<span>{typingSpeed}</span>
+              タイピング速度：<span>{typeSpeedContext}</span>
             </p>
           </div>
           <div className="p-8">
             <p className="text-center font-semibold">
-              ミスタイプ数：<span>{missTouch}</span>
+              ミスタイプ数：<span>{props.missCount}</span>
             </p>
           </div>
 
           <div className="p-8">
-            <ButtonBackToHome />
+            <ButtonBackToHome
+              correctCount={props.correctCount}
+              setCorrectCount={props.setCorrectCount}
+              missCount={props.missCount}
+              setMissCount={props.setMissCount}
+            />
           </div>
         </div>
       </div>

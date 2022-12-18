@@ -10,6 +10,9 @@ function App() {
   const [se, setSe] = useState(true);
   const [typeSound, setTypeSound] = useState(true);
   const [missSound, setMissSound] = useState(true);
+  // scoreの情報を"useState"を使って状態管理
+  const [correctCount, setCorrectCount] = useState(0);
+  const [missCount, setMissCount] = useState(0);
   //
   return (
     <div className="app">
@@ -32,10 +35,30 @@ function App() {
           ></Route>
           <Route path="/play1" element={<Play />}></Route>
           <Route path="/play2" element={<Play />}></Route>
-          <Route path="/play3" element={<Play />}></Route>
+          <Route
+            path="/play3"
+            element={
+              <Play
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+              />
+            }
+          ></Route>
           <Route path="/play4" element={<Play />}></Route>
           <Route path="/play5" element={<Play />}></Route>
-          <Route path="/score" element={<Score />}></Route>
+          <Route
+            path="/score"
+            element={
+              <Score
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+              />
+            }
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

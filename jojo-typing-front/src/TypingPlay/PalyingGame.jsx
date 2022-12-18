@@ -52,6 +52,10 @@ const PalyingGame = (props) => {
     } else if (event.key === checkText[0]) {
       setCorrectText(correctText + event.key);
       setCheckText(checkText.splice(1));
+      props.setCorrectCount(props.correctCount + 1);
+    } else {
+      // ミス数カウント
+      props.setMissCount(props.missCount + 1);
     }
   };
   // 空白時の処理
