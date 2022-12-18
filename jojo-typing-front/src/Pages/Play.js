@@ -5,7 +5,7 @@ import PlayModal from "../Modal/PlayModal";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-function Play() {
+const Play = (props) => {
   // Pathから部数を取得
   let { pathname } = useLocation();
   const partOfNumber = pathname.replace("/play", "");
@@ -62,11 +62,15 @@ function Play() {
           count={count}
           setCount={setCount}
           stop={() => stop()}
+          correctCount={props.correctCount}
+          setCorrectCount={props.setCorrectCount}
+          missCount={props.missCount}
+          setMissCount={props.setMissCount}
         />
       </div>
       <Footer />
     </>
   );
-}
+};
 
 export default Play;
