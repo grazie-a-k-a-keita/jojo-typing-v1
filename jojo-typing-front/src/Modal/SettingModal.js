@@ -140,12 +140,9 @@ const SettingModal = (props) => {
               </label>
             </div>
 
-            <div className=" flex justify-center p-8">
+            <div className="p-8">
               <button onClick={closeModal} className="button">
                 OK
-              </button>
-              <button onClick={closeModal} className="button">
-                戻る
               </button>
             </div>
           </div>
