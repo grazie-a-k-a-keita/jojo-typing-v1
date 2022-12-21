@@ -9,8 +9,13 @@ const ButtonBackToHome = (props) => {
     `${process.env.PUBLIC_URL}/sounds/SE/buttonHover.mp3`,
     { interrupt: true }
   );
+  const [playButtonClickBack] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonClickBack.mp3`,
+    { interrupt: true }
+  );
   //
-  const resetScore = () => {
+  const onClick = () => {
+    playButtonClickBack();
     props.setCorrectCount(0);
     props.setMissCount(0);
   };
@@ -20,7 +25,7 @@ const ButtonBackToHome = (props) => {
       <Link
         to="/"
         className="button"
-        onClick={resetScore}
+        onClick={() => onClick()}
         onMouseEnter={() => playButtonHover()}
       >
         ホームに戻る

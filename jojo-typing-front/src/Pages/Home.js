@@ -15,15 +15,21 @@ const Home = (props) => {
     `${process.env.PUBLIC_URL}/sounds/SE/buttonHover.mp3`,
     { interrupt: true }
   );
+  const [playButtonClick] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonClick.mp3`,
+    { interrupt: true }
+  );
   // モーダル
   const [howToPlayModal, setShowHowToPlayModal] = useState(false);
   const [settingModal, setShowSettingModal] = useState(false);
   //
-  const showHowToPlayModal = () => {
+  const howToPlayClick = () => {
     setShowHowToPlayModal(true);
+    playButtonClick();
   };
-  const showSettingModal = () => {
+  const settingClick = () => {
     setShowSettingModal(true);
+    playButtonClick();
   };
   //
   return (
@@ -36,6 +42,7 @@ const Home = (props) => {
             to="/play1"
             className="button"
             onMouseEnter={() => playButtonHover()}
+            onClick={() => playButtonClick()}
           >
             1部
           </Link>
@@ -43,6 +50,7 @@ const Home = (props) => {
             to="/play2"
             className="button"
             onMouseEnter={() => playButtonHover()}
+            onClick={() => playButtonClick()}
           >
             2部
           </Link>
@@ -50,6 +58,7 @@ const Home = (props) => {
             to="play3"
             className="button"
             onMouseEnter={() => playButtonHover()}
+            onClick={() => playButtonClick()}
           >
             3部
           </Link>
@@ -57,6 +66,7 @@ const Home = (props) => {
             to="/play4"
             className="button"
             onMouseEnter={() => playButtonHover()}
+            onClick={() => playButtonClick()}
           >
             4部
           </Link>
@@ -64,20 +74,21 @@ const Home = (props) => {
             to="/play5"
             className="button"
             onMouseEnter={() => playButtonHover()}
+            onClick={() => playButtonClick()}
           >
             5部
           </Link>
         </div>
         <div className="flex justify-center">
           <button
-            onClick={showHowToPlayModal}
+            onClick={howToPlayClick}
             className="mr-8"
             onMouseEnter={() => playButtonHover()}
           >
             <span className="button">遊び方</span>
           </button>
           <button
-            onClick={showSettingModal}
+            onClick={settingClick}
             className="ml-8"
             onMouseEnter={() => playButtonHover()}
           >
