@@ -1,12 +1,19 @@
 import React from "react";
+import useSound from "use-sound";
 import SubHeading from "../Components/SubHeading";
 import "../css/button.css";
 import "../css/modal.css";
 
 const HowToPlayModal = (props) => {
+  // sound
+  const [playButtonClickBack] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonClickBack.mp3`,
+    { interrupt: true }
+  );
   //
-  const closeModal = () => {
+  const buttonClick = () => {
     props.setShowModal(false);
+    playButtonClickBack();
   };
   //
   return (
@@ -36,7 +43,7 @@ const HowToPlayModal = (props) => {
             </div>
 
             <div className="p-8">
-              <button onClick={closeModal} className="button">
+              <button onClick={buttonClick} className="button">
                 戻る
               </button>
             </div>

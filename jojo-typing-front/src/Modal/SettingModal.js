@@ -1,12 +1,19 @@
 import React from "react";
+import useSound from "use-sound";
 import SubHeading from "../Components/SubHeading";
 import "../css/button.css";
 import "../css/modal.css";
 
 const SettingModal = (props) => {
+  // sound
+  const [playButtonClick] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonClick.mp3`,
+    { interrupt: true }
+  );
   //
-  const closeModal = () => {
+  const buttonClick = () => {
     props.setShowModal(false);
+    playButtonClick();
   };
   const onBgm = () => {
     props.setBgm(true);
@@ -140,12 +147,9 @@ const SettingModal = (props) => {
               </label>
             </div>
 
-            <div className=" flex justify-center p-8">
-              <button onClick={closeModal} className="button">
+            <div className="p-8">
+              <button onClick={buttonClick} className="button">
                 OK
-              </button>
-              <button onClick={closeModal} className="button">
-                戻る
               </button>
             </div>
           </div>

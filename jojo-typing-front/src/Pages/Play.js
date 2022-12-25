@@ -22,7 +22,6 @@ const Play = (props) => {
       navigate("/score");
     }
   });
-
   const start = () => {
     if (intervalRef.current !== null) {
       return;
@@ -49,6 +48,10 @@ const Play = (props) => {
         showGame={showGame}
         setShowGame={setShowGame}
         start={() => start()}
+        correctCount={props.correctCount}
+        setCorrectCount={props.setCorrectCount}
+        missCount={props.missCount}
+        setMissCount={props.setMissCount}
       />
       <Header />
       <div className="w-3/5 mx-auto">

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import useSound from "use-sound";
 import "../css/PlayingGame.css";
 
 // DBから取得する値（仮）
@@ -31,6 +32,15 @@ const db = [
 ];
 //
 const PalyingGame = (props) => {
+  //sound
+  const [typeSound] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/typeSound.mp3`,
+    { interrupt: false }
+  );
+  const [missTypeSound] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/missTypeSound.mp3`,
+    { interrupt: true }
+  );
   // タイピングの処理 + "Escape"で強制終了
   let ProblemText = db.map((value) => {
     let text = "";
@@ -53,9 +63,11 @@ const PalyingGame = (props) => {
       setCorrectText(correctText + event.key);
       setCheckText(checkText.splice(1));
       props.setCorrectCount(props.correctCount + 1);
+      typeSound();
     } else {
       // ミス数カウント
       props.setMissCount(props.missCount + 1);
+      missTypeSound();
     }
   };
   // 空白時の処理

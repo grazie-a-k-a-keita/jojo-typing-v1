@@ -13,6 +13,8 @@ function App() {
   // scoreの情報を"useState"を使って状態管理
   const [correctCount, setCorrectCount] = useState(0);
   const [missCount, setMissCount] = useState(0);
+  // ブラウザ初期表示の状態管理
+  const [touchToStartModal, setTouchToStartModal] = useState(true);
   //
   return (
     <div className="app">
@@ -30,11 +32,37 @@ function App() {
                 setTypeSound={setTypeSound}
                 missSound={missSound}
                 setMissSound={setMissSound}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
               />
             }
           ></Route>
-          <Route path="/play1" element={<Play />}></Route>
-          <Route path="/play2" element={<Play />}></Route>
+          <Route
+            path="/play1"
+            element={
+              <Play
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
+              />
+            }
+          ></Route>
+          <Route
+            path="/play2"
+            element={
+              <Play
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
+              />
+            }
+          ></Route>
           <Route
             path="/play3"
             element={
@@ -43,11 +71,37 @@ function App() {
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
                 setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
               />
             }
           ></Route>
-          <Route path="/play4" element={<Play />}></Route>
-          <Route path="/play5" element={<Play />}></Route>
+          <Route
+            path="/play4"
+            element={
+              <Play
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
+              />
+            }
+          ></Route>
+          <Route
+            path="/play5"
+            element={
+              <Play
+                correctCount={correctCount}
+                setCorrectCount={setCorrectCount}
+                missCount={missCount}
+                setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
+              />
+            }
+          ></Route>
           <Route
             path="/score"
             element={
@@ -56,6 +110,8 @@ function App() {
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
                 setMissCount={setMissCount}
+                showFlag={touchToStartModal}
+                setShowModal={setTouchToStartModal}
               />
             }
           ></Route>
