@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useSound from "use-sound";
 import Header from "../Components/Header";
@@ -19,6 +19,9 @@ const Home = (props) => {
     `${process.env.PUBLIC_URL}/sounds/SE/buttonClick.mp3`,
     { interrupt: true }
   );
+  const [playBgm] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/BGM-home.wav`
+  );
   // モーダル
   const [howToPlayModal, setShowHowToPlayModal] = useState(false);
   const [settingModal, setShowSettingModal] = useState(false);
@@ -31,6 +34,11 @@ const Home = (props) => {
     setShowSettingModal(true);
     playButtonClick();
   };
+  //
+  useEffect(() => {
+    playBgm();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.showFlag]);
   //
   return (
     <>
