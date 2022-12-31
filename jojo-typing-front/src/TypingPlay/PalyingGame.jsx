@@ -29,10 +29,6 @@ const db = [
     part: 3,
     text: "are you gonna do the ora ora things",
   },
-  {
-    part: 3,
-    text: "ジョジョの奇妙な冒険",
-  },
 ];
 //
 const PalyingGame = (props) => {
