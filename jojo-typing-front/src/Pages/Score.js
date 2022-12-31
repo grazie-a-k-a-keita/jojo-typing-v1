@@ -8,6 +8,7 @@ const Score = (props) => {
     <>
       <Header />
       <ScoreModal
+        se={props.se}
         correctCount={props.correctCount}
         setCorrectCount={props.setCorrectCount}
         missCount={props.missCount}

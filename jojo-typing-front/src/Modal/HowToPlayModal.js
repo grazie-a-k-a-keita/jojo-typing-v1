@@ -6,23 +6,33 @@ import "../css/modal.css";
 
 const HowToPlayModal = (props) => {
   // sound
+  const [playButtonHover] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonHover.mp3`,
+    { interrupt: true }
+  );
   const [playButtonClickBack] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/buttonClickBack.mp3`,
     { interrupt: true }
   );
-  //
+  // ボタンのsound関連の処理
+  const buttonHover = () => {
+    if (props.se === true) {
+      playButtonHover();
+    }
+  };
   const buttonClick = () => {
     props.setShowModal(false);
-    playButtonClickBack();
+    if (props.se === true) {
+      playButtonClickBack();
+    }
   };
-  //
+  // HTML
   return (
     <>
       {props.showFlag ? (
         <div id="overlay">
           <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
-
             <div className="p-8">
               <p className="font-bold text-sky-700">はじめに</p>
               <ul className="list-disc">
@@ -41,9 +51,12 @@ const HowToPlayModal = (props) => {
                 <li>Escキーを押すと、最初からやり直すことができます。</li>
               </ul>
             </div>
-
             <div className="p-8">
-              <button onClick={buttonClick} className="button">
+              <button
+                className="button"
+                onMouseEnter={() => buttonHover()}
+                onClick={buttonClick}
+              >
                 戻る
               </button>
             </div>

@@ -10,9 +10,9 @@ const Play = (props) => {
   let { pathname } = useLocation();
   const partOfNumber = pathname.replace("/play", "");
   // State, Ref
+  const [subHeading, setSubHeading] = useState(partOfNumber + "部コース");
   const [showGame, setShowGame] = useState(false);
   const [showModal, setShowModal] = useState(true);
-  const [subHeading, setSubHeading] = useState(partOfNumber + "部コース");
   const [count, setCount] = useState(0);
   const intervalRef = useRef(null);
   // タイマー関連
@@ -37,20 +37,18 @@ const Play = (props) => {
     clearInterval(intervalRef.current);
     intervalRef.current = null;
   };
-  //
+  // HTML
   return (
     <>
       <PlayModal
+        se={props.se}
         showFlag={showModal}
         setShowModal={setShowModal}
         subHeading={subHeading}
-        setSubHeading={setSubHeading}
         showGame={showGame}
         setShowGame={setShowGame}
         start={() => start()}
-        correctCount={props.correctCount}
         setCorrectCount={props.setCorrectCount}
-        missCount={props.missCount}
         setMissCount={props.setMissCount}
       />
       <Header />
