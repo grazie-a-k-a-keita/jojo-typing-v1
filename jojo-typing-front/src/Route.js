@@ -15,7 +15,7 @@ function App() {
   const [missCount, setMissCount] = useState(0);
   // ブラウザ初期表示の状態管理
   const [touchToStartModal, setTouchToStartModal] = useState(true);
-  //
+  // HTML
   return (
     <div className="app">
       <BrowserRouter>
@@ -42,6 +42,8 @@ function App() {
             element={
               <Play
                 se={se}
+                typeSound={typeSound}
+                missSound={missSound}
                 correctCount={correctCount}
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
@@ -54,6 +56,8 @@ function App() {
             element={
               <Play
                 se={se}
+                typeSound={typeSound}
+                missSound={missSound}
                 correctCount={correctCount}
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
@@ -66,7 +70,8 @@ function App() {
             element={
               <Play
                 se={se}
-                setSe={setSe}
+                typeSound={typeSound}
+                missSound={missSound}
                 correctCount={correctCount}
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
@@ -79,6 +84,8 @@ function App() {
             element={
               <Play
                 se={se}
+                typeSound={typeSound}
+                missSound={missSound}
                 correctCount={correctCount}
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}
@@ -91,6 +98,8 @@ function App() {
             element={
               <Play
                 se={se}
+                typeSound={typeSound}
+                missSound={missSound}
                 correctCount={correctCount}
                 setCorrectCount={setCorrectCount}
                 missCount={missCount}

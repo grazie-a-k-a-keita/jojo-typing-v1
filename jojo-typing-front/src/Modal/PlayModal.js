@@ -13,7 +13,9 @@ const PlayModal = (props) => {
   // ゲームをスタートする処理
   window.document.onkeydown = function (event) {
     if (event.key === "Enter" || event.key === " ") {
-      playOnkeyDown();
+      if (props.se === true) {
+        playOnkeyDown();
+      }
       props.setShowModal(false);
       props.setShowGame(true);
       props.start();

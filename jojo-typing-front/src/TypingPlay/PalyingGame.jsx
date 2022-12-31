@@ -29,10 +29,14 @@ const db = [
     part: 3,
     text: "are you gonna do the ora ora things",
   },
+  {
+    part: 3,
+    text: "ジョジョの奇妙な冒険",
+  },
 ];
 //
 const PalyingGame = (props) => {
-  //sound
+  // sound
   const [typeSound] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/typeSound.mp3`,
     { interrupt: false }
@@ -41,7 +45,7 @@ const PalyingGame = (props) => {
     `${process.env.PUBLIC_URL}/sounds/SE/missTypeSound.mp3`,
     { interrupt: true }
   );
-  // タイピングの処理 + "Escape"で強制終了
+  // 問題文生成
   let ProblemText = db.map((value) => {
     let text = "";
     if (value.part === 3) {
@@ -52,22 +56,32 @@ const PalyingGame = (props) => {
   const rnd = Math.floor(Math.random() * ProblemText.length);
   const [correctText, setCorrectText] = useState("");
   const [checkText, setCheckText] = useState(ProblemText[rnd].split(""));
+  // タイピング処理
   document.onkeydown = function (event) {
     if (event.key === "Escape") {
-      props.setSubHeading(props.subHeading);
+      // "Escape"キーの処理（タイマー、タイプカウントのリセット）
       props.setShowModal(true);
       props.setShowGame(false);
       props.stop();
       props.setCount(0);
+      props.setCorrectCount(0);
+      props.setMissCount(0);
     } else if (event.key === checkText[0]) {
+      // 正解した時の処理
       setCorrectText(correctText + event.key);
       setCheckText(checkText.splice(1));
       props.setCorrectCount(props.correctCount + 1);
-      typeSound();
+      if (props.typeSound === true) {
+        // sound on/off
+        typeSound();
+      }
     } else {
-      // ミス数カウント
+      // ミスした時の処理
       props.setMissCount(props.missCount + 1);
-      missTypeSound();
+      if (props.missSound === true) {
+        // sound on/off
+        missTypeSound();
+      }
     }
   };
   // 空白時の処理
@@ -75,11 +89,12 @@ const PalyingGame = (props) => {
     setCorrectText(correctText + " ");
     setCheckText(checkText.splice(1));
   }
+  // 問題文が終了したとき
   if (checkText.length === 0) {
     setCorrectText("");
     setCheckText(ProblemText[rnd].split(""));
   }
-  //
+  // HTML
   return (
     <>
       <div className="gameBox">
