@@ -1,7 +1,7 @@
 import React from "react";
-import ScoreModal from "../Modal/ScoreModal";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import ScoreModal from "../Modal/scoreModal";
+import Header from "../Components/header";
+import Footer from "../Components/footer";
 
 const Score = (props) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import useSound from "use-sound";
-import "../css/PlayingGame.css";
+import "../css/playingGame.css";
 
 // DBから取得する値（仮）
 const db = [
@@ -31,7 +31,7 @@ const db = [
   },
 ];
 //
-const PalyingGame = (props) => {
+const PlayingGame = (props) => {
   // sound
   const [typeSound] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/typeSound.mp3`,
@@ -103,4 +103,4 @@ const PalyingGame = (props) => {
   );
 };
 
-export default PalyingGame;
+export default PlayingGame;

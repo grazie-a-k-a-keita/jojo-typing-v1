@@ -1,13 +1,13 @@
 import React from "react";
-import PalyingGame from "./PalyingGame";
-import TimeGauge from "./TimeGauge";
+import PlayingGame from "./playingGame";
+import TimeGauge from "./timeGauge";
 
 const TypingPlay = (props) => {
   return (
     <>
       {props.showGame ? (
         <>
-          <PalyingGame
+          <PlayingGame
             typeSound={props.typeSound}
             missSound={props.missSound}
             correctCount={props.correctCount}

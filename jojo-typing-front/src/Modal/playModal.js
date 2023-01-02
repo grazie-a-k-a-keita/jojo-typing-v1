@@ -1,7 +1,7 @@
 import React from "react";
 import useSound from "use-sound";
-import SubHeading from "../Components/SubHeading";
-import ButtonBackToHome from "../Components/Button-BackToHome";
+import SubHeading from "../Components/subHeading";
+import ButtonBackToHome from "../Components/button-BackToHome";
 import "../css/modal.css";
 import "../css/flashText.css";
 
