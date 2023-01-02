@@ -3,7 +3,7 @@ import { useState } from "react";
 import useSound from "use-sound";
 import "../css/playingGame.css";
 
-// DBから取得する値（仮）
+// DBから取得する値（予定）
 const db = [
   {
     part: 3,
@@ -30,7 +30,8 @@ const db = [
     text: "are you gonna do the ora ora things",
   },
 ];
-//
+////////////////////////////////////////////////////////////////////
+
 const PlayingGame = (props) => {
   // sound
   const [typeSound] = useSound(
