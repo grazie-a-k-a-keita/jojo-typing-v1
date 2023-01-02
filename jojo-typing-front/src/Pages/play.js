@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TypingGame from "../TypingPlay/typingPlay";
+import useSound from "use-sound";
+import TypingPlay from "../TypingPlay/typingPlay";
 import PlayModal from "../Modal/playModal";
 import Header from "../Components/header";
 import Footer from "../Components/footer";
@@ -8,14 +9,18 @@ import Footer from "../Components/footer";
 const Play = (props) => {
   // Pathから部数を取得
   let { pathname } = useLocation();
-  const partOfNumber = pathname.replace("/play", "");
+  const urlNumber = pathname.replace("/play", "");
   // State, Ref
-  const [subHeading] = useState(partOfNumber + "部コース");
+  const [partOfNumber] = useState(urlNumber);
   const [showGame, setShowGame] = useState(false);
   const [showModal, setShowModal] = useState(true);
   const [count, setCount] = useState(0);
   const intervalRef = useRef(null);
-  // タイマー関連
+  // sound
+  const [playBGM3, { stop }] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/BGM/BGM_03.mp3`
+  );
+  // スタート、ストップの処理
   const navigate = useNavigate();
   useEffect(() => {
     if (count === 60) {
@@ -29,13 +34,20 @@ const Play = (props) => {
     intervalRef.current = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+    // パートごとのBGMを選定する処理
+    if (props.bgm === true) {
+      if (partOfNumber === "3") {
+        playBGM3();
+      }
+    }
   };
-  const stop = () => {
+  const stoped = () => {
     if (intervalRef.current === null) {
       return;
     }
     clearInterval(intervalRef.current);
     intervalRef.current = null;
+    stop();
   };
   // HTML
   return (
@@ -43,9 +55,9 @@ const Play = (props) => {
       {/* モダール部分 */}
       <PlayModal
         se={props.se}
+        partOfNumber={partOfNumber}
         showFlag={showModal}
         setShowModal={setShowModal}
-        subHeading={subHeading}
         setShowGame={setShowGame}
         start={() => start()}
         setCorrectCount={props.setCorrectCount}
@@ -55,18 +67,19 @@ const Play = (props) => {
       {/* プレイ画面部分 */}
       <Header />
       <div className="w-3/5 mx-auto">
-        <TypingGame
+        <TypingPlay
           typeSound={props.typeSound}
           missSound={props.missSound}
           correctCount={props.correctCount}
           setCorrectCount={props.setCorrectCount}
           missCount={props.missCount}
           setMissCount={props.setMissCount}
+          partOfNumber={partOfNumber}
           setShowModal={setShowModal}
           showGame={showGame}
           setShowGame={setShowGame}
           setCount={setCount}
-          stop={() => stop()}
+          stoped={() => stoped()}
         />
       </div>
       <Footer />

@@ -14,10 +14,11 @@ const TypingPlay = (props) => {
             setCorrectCount={props.setCorrectCount}
             missCount={props.missCount}
             setMissCount={props.setMissCount}
+            partOfNumber={props.partOfNumber}
             setShowModal={props.setShowModal}
             setShowGame={props.setShowGame}
             setCount={props.setCount}
-            stop={() => props.stop()}
+            stoped={() => props.stoped()}
           />
           <TimeGauge />
         </>
