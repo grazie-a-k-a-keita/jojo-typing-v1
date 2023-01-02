@@ -70,33 +70,39 @@ const PlayingGame = (props) => {
   const [correctText, setCorrectText] = useState("");
   const [checkText, setCheckText] = useState(ProblemText[rnd].split(""));
   // タイピング処理
-  document.onkeydown = function (event) {
-    if (event.key === "Escape") {
-      // "Escape"キーの処理（タイマー、タイプカウントのリセット）
-      props.setShowModal(true);
-      props.setShowGame(false);
-      props.stoped();
-      props.setCount(0);
-      props.setCorrectCount(0);
-      props.setMissCount(0);
-    } else if (event.key === checkText[0]) {
-      // 正解した時の処理
-      setCorrectText(correctText + event.key);
-      setCheckText(checkText.splice(1));
-      props.setCorrectCount(props.correctCount + 1);
-      if (props.typeSound === true) {
-        // sound on/off
-        typeSound();
+  useEffect(() => {
+    document.onkeydown = function (event) {
+      if (event.key === "Escape") {
+        // "Escape"キーの処理（タイマー、タイプカウントのリセット）
+        props.setShowModal(true);
+        props.setShowGame(false);
+        props.stoped();
+        props.setCount(0);
+        props.setCorrectCount(0);
+        props.setMissCount(0);
+      } else if (event.key === checkText[0]) {
+        // 正解した時の処理
+        if (props.count !== 60) {
+          setCorrectText(correctText + event.key);
+          setCheckText(checkText.splice(1));
+          props.setCorrectCount(props.correctCount + 1);
+          if (props.typeSound === true) {
+            // sound on/off
+            typeSound();
+          }
+        }
+      } else {
+        // ミスした時の処理
+        if (props.count !== 60) {
+          props.setMissCount(props.missCount + 1);
+          if (props.missSound === true) {
+            // sound on/off
+            missTypeSound();
+          }
+        }
       }
-    } else {
-      // ミスした時の処理
-      props.setMissCount(props.missCount + 1);
-      if (props.missSound === true) {
-        // sound on/off
-        missTypeSound();
-      }
-    }
-  };
+    };
+  });
   // 空白時の処理
   useEffect(() => {
     if (checkText[0] === " ") {

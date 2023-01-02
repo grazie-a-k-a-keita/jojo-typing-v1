@@ -20,7 +20,7 @@ const Play = (props) => {
   const [playBGM3, { stop }] = useSound(
     `${process.env.PUBLIC_URL}/sounds/BGM/BGM_03.mp3`
   );
-  // スタート、ストップの処理
+  // スタート、ストップ、終了の処理
   const navigate = useNavigate();
   useEffect(() => {
     if (count === 60) {
@@ -47,6 +47,7 @@ const Play = (props) => {
     }
     clearInterval(intervalRef.current);
     intervalRef.current = null;
+    // BGMストップ
     stop();
   };
   // HTML
@@ -78,6 +79,7 @@ const Play = (props) => {
           setShowModal={setShowModal}
           showGame={showGame}
           setShowGame={setShowGame}
+          count={count}
           setCount={setCount}
           stoped={() => stoped()}
         />

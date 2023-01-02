@@ -17,6 +17,7 @@ const TypingPlay = (props) => {
             partOfNumber={props.partOfNumber}
             setShowModal={props.setShowModal}
             setShowGame={props.setShowGame}
+            count={props.count}
             setCount={props.setCount}
             stoped={() => props.stoped()}
           />
