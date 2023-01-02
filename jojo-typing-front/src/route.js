@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import Play from "./Pages/Play";
-import Score from "./Pages/Score";
+import Home from "./Pages/home";
+import Play from "./Pages/play";
+import Score from "./Pages/score";
 
 function App() {
   // sound情報の状態管理

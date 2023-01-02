@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useSound from "use-sound";
-import Header from "../Components/Header";
-import MainTitle from "../Components/MainTitle";
-import Footer from "../Components/Footer";
-import HowToPlayModal from "../Modal/HowToPlayModal";
-import SettingModal from "../Modal/SettingModal";
-import TouchToStartModal from "../Modal/TouchToStartModal";
+import Header from "../Components/header";
+import MainTitle from "../Components/mainTitle";
+import Footer from "../Components/footer";
+import HowToPlayModal from "../Modal/howToPlayModal";
+import SettingModal from "../Modal/settingModal";
+import TouchToStartModal from "../Modal/touchToStartModal";
 import "../css/button.css";
 
 const Home = (props) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import useSound from "use-sound";
-import SubHeading from "../Components/SubHeading";
+import SubHeading from "../Components/subHeading";
 import "../css/button.css";
 import "../css/modal.css";
 

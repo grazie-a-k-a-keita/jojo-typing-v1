@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/TimeGauge.css";
+import "../css/timeGauge.css";
 
 const TimeGauge = () => {
   return (

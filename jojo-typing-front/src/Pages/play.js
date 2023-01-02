@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TypingGame from "../TypingPlay/TypingPlay";
-import PlayModal from "../Modal/PlayModal";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import TypingGame from "../TypingPlay/typingPlay";
+import PlayModal from "../Modal/playModal";
+import Header from "../Components/header";
+import Footer from "../Components/footer";
 
 const Play = (props) => {
   // Pathから部数を取得
