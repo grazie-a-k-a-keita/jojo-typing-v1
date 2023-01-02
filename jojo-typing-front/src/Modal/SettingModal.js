@@ -6,15 +6,27 @@ import "../css/modal.css";
 
 const SettingModal = (props) => {
   // sound
+  const [playButtonHover] = useSound(
+    `${process.env.PUBLIC_URL}/sounds/SE/buttonHover.mp3`,
+    { interrupt: true }
+  );
   const [playButtonClick] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/buttonClick.mp3`,
     { interrupt: true }
   );
-  //
+  // ボタンのsound関連の処理
+  const buttonHover = () => {
+    if (props.se === true) {
+      playButtonHover();
+    }
+  };
   const buttonClick = () => {
     props.setShowModal(false);
-    playButtonClick();
+    if (props.se === true) {
+      playButtonClick();
+    }
   };
+  // soundの状態管理を変更する処理
   const onBgm = () => {
     props.setBgm(true);
   };
@@ -39,14 +51,13 @@ const SettingModal = (props) => {
   const offMiss = () => {
     props.setMissSound(false);
   };
-  //
+  // HTML
   return (
     <>
       {props.showFlag ? (
         <div id="overlay">
           <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
-
             <div className="p-8">
               <p className="font-bold text-sky-700 mb-2">BGM</p>
               <input
@@ -71,7 +82,6 @@ const SettingModal = (props) => {
                 なし
               </label>
             </div>
-
             <div className="pl-8 pb-8">
               <p className="font-bold text-sky-700 mb-2">効果音</p>
               <input
@@ -96,7 +106,6 @@ const SettingModal = (props) => {
                 なし
               </label>
             </div>
-
             <div className="pl-8 pb-8">
               <p className="font-bold text-sky-700 mb-2">タイプ音</p>
               <input
@@ -121,7 +130,6 @@ const SettingModal = (props) => {
                 なし
               </label>
             </div>
-
             <div className="pl-8 pb-8">
               <p className="font-bold text-sky-700 mb-2">ミス音</p>
               <input
@@ -146,9 +154,12 @@ const SettingModal = (props) => {
                 なし
               </label>
             </div>
-
             <div className="p-8">
-              <button onClick={buttonClick} className="button">
+              <button
+                className="button"
+                onMouseEnter={() => buttonHover()}
+                onClick={buttonClick}
+              >
                 OK
               </button>
             </div>

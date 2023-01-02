@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useSound from "use-sound";
 import Header from "../Components/Header";
@@ -10,6 +10,9 @@ import TouchToStartModal from "../Modal/TouchToStartModal";
 import "../css/button.css";
 
 const Home = (props) => {
+  // モーダルの状態管理
+  const [howToPlayModal, setShowHowToPlayModal] = useState(false);
+  const [settingModal, setShowSettingModal] = useState(false);
   // sound
   const [playButtonHover] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/buttonHover.mp3`,
@@ -19,29 +22,34 @@ const Home = (props) => {
     `${process.env.PUBLIC_URL}/sounds/SE/buttonClick.mp3`,
     { interrupt: true }
   );
-  const [playBgm] = useSound(
-    `${process.env.PUBLIC_URL}/sounds/SE/BGM-home.wav`
-  );
-  // モーダル
-  const [howToPlayModal, setShowHowToPlayModal] = useState(false);
-  const [settingModal, setShowSettingModal] = useState(false);
-  //
+  // ボタンのsound関連の処理
+  const buttonHover = () => {
+    if (props.se === true) {
+      playButtonHover();
+    }
+  };
+  const buttonClick = () => {
+    props.setShowModal(false);
+    if (props.se === true) {
+      playButtonClick();
+    }
+  };
   const howToPlayClick = () => {
     setShowHowToPlayModal(true);
-    playButtonClick();
+    if (props.se === true) {
+      playButtonClick();
+    }
   };
   const settingClick = () => {
     setShowSettingModal(true);
-    playButtonClick();
+    if (props.se === true) {
+      playButtonClick();
+    }
   };
-  //
-  useEffect(() => {
-    playBgm();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.showFlag]);
-  //
+  // HTML
   return (
     <>
+      {/* ホーム画面部分 */}
       <Header />
       <div className="w-3/5 mx-auto">
         <MainTitle />
@@ -49,71 +57,71 @@ const Home = (props) => {
           <Link
             to="/play1"
             className="button"
-            onMouseEnter={() => playButtonHover()}
-            onClick={() => playButtonClick()}
+            onMouseEnter={() => buttonHover()}
+            onClick={() => buttonClick()}
           >
             1部
           </Link>
           <Link
             to="/play2"
             className="button"
-            onMouseEnter={() => playButtonHover()}
-            onClick={() => playButtonClick()}
+            onMouseEnter={() => buttonHover()}
+            onClick={() => buttonClick()}
           >
             2部
           </Link>
           <Link
             to="play3"
             className="button"
-            onMouseEnter={() => playButtonHover()}
-            onClick={() => playButtonClick()}
+            onMouseEnter={() => buttonHover()}
+            onClick={() => buttonClick()}
           >
             3部
           </Link>
           <Link
             to="/play4"
             className="button"
-            onMouseEnter={() => playButtonHover()}
-            onClick={() => playButtonClick()}
+            onMouseEnter={() => buttonHover()}
+            onClick={() => buttonClick()}
           >
             4部
           </Link>
           <Link
             to="/play5"
             className="button"
-            onMouseEnter={() => playButtonHover()}
-            onClick={() => playButtonClick()}
+            onMouseEnter={() => buttonHover()}
+            onClick={() => buttonClick()}
           >
             5部
           </Link>
         </div>
         <div className="flex justify-center">
           <button
-            onClick={howToPlayClick}
             className="mr-8"
-            onMouseEnter={() => playButtonHover()}
+            onMouseEnter={() => buttonHover()}
+            onClick={howToPlayClick}
           >
             <span className="button">遊び方</span>
           </button>
           <button
-            onClick={settingClick}
             className="ml-8"
-            onMouseEnter={() => playButtonHover()}
+            onMouseEnter={() => buttonHover()}
+            onClick={settingClick}
           >
             <span className="button">設定</span>
           </button>
         </div>
       </div>
       <Footer />
+
+      {/* モダール部分 */}
       <HowToPlayModal
+        se={props.se}
         showFlag={howToPlayModal}
         setShowModal={setShowHowToPlayModal}
         subHeading="遊び方"
       />
       <SettingModal
-        showFlag={settingModal}
-        setShowModal={setShowSettingModal}
-        subHeading="設定"
         bgm={props.bgm}
         setBgm={props.setBgm}
         se={props.se}
@@ -122,6 +130,9 @@ const Home = (props) => {
         setTypeSound={props.setTypeSound}
         missSound={props.missSound}
         setMissSound={props.setMissSound}
+        showFlag={settingModal}
+        setShowModal={setShowSettingModal}
+        subHeading="設定"
       />
       <TouchToStartModal
         showFlag={props.showFlag}

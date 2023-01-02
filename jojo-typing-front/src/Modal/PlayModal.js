@@ -10,22 +10,24 @@ const PlayModal = (props) => {
   const [playOnkeyDown] = useSound(
     `${process.env.PUBLIC_URL}/sounds/SE/承太郎 オラオラ.wav`
   );
-  //
+  // ゲームをスタートする処理
   window.document.onkeydown = function (event) {
     if (event.key === "Enter" || event.key === " ") {
-      playOnkeyDown();
+      if (props.se === true) {
+        playOnkeyDown();
+      }
       props.setShowModal(false);
       props.setShowGame(true);
       props.start();
     }
   };
+  // HTML
   return (
     <>
       {props.showFlag ? (
         <div tabIndex={1} id="overlay">
           <div id="modalContent">
             <SubHeading subHeading={props.subHeading} />
-
             <div className="p-8">
               <p className="text-center font-semibold">
                 【Space か Enter キーを押すとスタートします】
@@ -43,9 +45,8 @@ const PlayModal = (props) => {
             </div>
             <div className="p-8">
               <ButtonBackToHome
-                correctCount={props.correctCount}
+                se={props.se}
                 setCorrectCount={props.setCorrectCount}
-                missCount={props.missCount}
                 setMissCount={props.setMissCount}
               />
             </div>

@@ -10,9 +10,9 @@ const Play = (props) => {
   let { pathname } = useLocation();
   const partOfNumber = pathname.replace("/play", "");
   // State, Ref
+  const [subHeading] = useState(partOfNumber + "部コース");
   const [showGame, setShowGame] = useState(false);
   const [showModal, setShowModal] = useState(true);
-  const [subHeading, setSubHeading] = useState(partOfNumber + "部コース");
   const [count, setCount] = useState(0);
   const intervalRef = useRef(null);
   // タイマー関連
@@ -37,38 +37,36 @@ const Play = (props) => {
     clearInterval(intervalRef.current);
     intervalRef.current = null;
   };
-  //
+  // HTML
   return (
     <>
+      {/* モダール部分 */}
       <PlayModal
+        se={props.se}
         showFlag={showModal}
         setShowModal={setShowModal}
         subHeading={subHeading}
-        setSubHeading={setSubHeading}
-        showGame={showGame}
         setShowGame={setShowGame}
         start={() => start()}
-        correctCount={props.correctCount}
         setCorrectCount={props.setCorrectCount}
-        missCount={props.missCount}
         setMissCount={props.setMissCount}
       />
+
+      {/* プレイ画面部分 */}
       <Header />
       <div className="w-3/5 mx-auto">
         <TypingGame
-          showFlag={showModal}
-          setShowModal={setShowModal}
-          subHeading={subHeading}
-          setSubHeading={setSubHeading}
-          showGame={showGame}
-          setShowGame={setShowGame}
-          count={count}
-          setCount={setCount}
-          stop={() => stop()}
+          typeSound={props.typeSound}
+          missSound={props.missSound}
           correctCount={props.correctCount}
           setCorrectCount={props.setCorrectCount}
           missCount={props.missCount}
           setMissCount={props.setMissCount}
+          setShowModal={setShowModal}
+          showGame={showGame}
+          setShowGame={setShowGame}
+          setCount={setCount}
+          stop={() => stop()}
         />
       </div>
       <Footer />

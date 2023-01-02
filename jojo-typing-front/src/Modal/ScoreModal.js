@@ -10,7 +10,7 @@ const ScoreModal = (props) => {
   // タイピング速度
   const typeSpeed = props.correctCount / 60;
   const typeSpeedContext = typeSpeed.toFixed(2) + "/s";
-
+  // HTML
   return (
     <>
       <div tabIndex={1} id="overlay">
@@ -40,9 +40,8 @@ const ScoreModal = (props) => {
 
           <div className="p-8">
             <ButtonBackToHome
-              correctCount={props.correctCount}
+              se={props.se}
               setCorrectCount={props.setCorrectCount}
-              missCount={props.missCount}
               setMissCount={props.setMissCount}
             />
           </div>
