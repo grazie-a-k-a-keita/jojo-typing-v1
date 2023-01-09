@@ -27,7 +27,7 @@ const PlayModal = (props) => {
       {props.showFlag ? (
         <div tabIndex={1} id="overlay">
           <div id="modalContent">
-            <SubHeading subHeading={props.subHeading} />
+            <SubHeading subHeading={props.partOfNumber + "部コース"} />
             <div className="p-8">
               <p className="text-center font-semibold">
                 【Space か Enter キーを押すとスタートします】

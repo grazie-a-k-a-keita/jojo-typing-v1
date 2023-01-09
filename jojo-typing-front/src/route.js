@@ -41,6 +41,7 @@ function App() {
             path="/play1"
             element={
               <Play
+                bgm={bgm}
                 se={se}
                 typeSound={typeSound}
                 missSound={missSound}
@@ -55,6 +56,7 @@ function App() {
             path="/play2"
             element={
               <Play
+                bgm={bgm}
                 se={se}
                 typeSound={typeSound}
                 missSound={missSound}
@@ -69,6 +71,7 @@ function App() {
             path="/play3"
             element={
               <Play
+                bgm={bgm}
                 se={se}
                 typeSound={typeSound}
                 missSound={missSound}
@@ -83,6 +86,7 @@ function App() {
             path="/play4"
             element={
               <Play
+                bgm={bgm}
                 se={se}
                 typeSound={typeSound}
                 missSound={missSound}
@@ -97,6 +101,7 @@ function App() {
             path="/play5"
             element={
               <Play
+                bgm={bgm}
                 se={se}
                 typeSound={typeSound}
                 missSound={missSound}
