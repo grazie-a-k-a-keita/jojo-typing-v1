@@ -2,51 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useSound from "use-sound";
 import "../css/playingGame.css";
-
-// DBから取得する値（予定）
-const db = [
-  {
-    part: "1",
-    text: "ジョジョの奇妙な冒険 1部",
-  },
-  {
-    part: "2",
-    text: "ジョジョの奇妙な冒険 2部",
-  },
-  {
-    part: "3",
-    text: "my demon blade wants the blood of its 340th victims and you all look like",
-  },
-  {
-    part: "3",
-    text: "didnt expect this but damn youre good",
-  },
-  {
-    part: "3",
-    text: "i keep telling you i dont have any weaknesses",
-  },
-  {
-    part: "3",
-    text: "that i have a stand that shoots and a sword",
-  },
-  {
-    part: "3",
-    text: "i win your valiant hero finally bit the dust",
-  },
-  {
-    part: "3",
-    text: "are you gonna do the ora ora things",
-  },
-  {
-    part: "4",
-    text: "ジョジョの奇妙な冒険 4部",
-  },
-  {
-    part: "5",
-    text: "ジョジョの奇妙な冒険 5部",
-  },
-];
-////////////////////////////////////////////////////////////////////
+import testdata from "../testdata/testdata.json";
 
 const PlayingGame = (props) => {
   // sound
@@ -59,7 +15,7 @@ const PlayingGame = (props) => {
     { interrupt: true }
   );
   // 問題文生成
-  var ProblemText = db
+  var ProblemText = testdata.testdata
     .filter(function (value) {
       return value.part === props.partOfNumber;
     })
