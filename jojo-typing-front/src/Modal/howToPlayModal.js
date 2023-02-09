@@ -30,8 +30,8 @@ const HowToPlayModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div id="overlay">
-          <div id="modalContent">
+        <div id="overlay_02">
+          <div id="modalContent_02">
             <SubHeading subHeading={props.subHeading} />
             <div className="p-8">
               <p className="font-bold text-sky-700 text-center">はじめに</p>
