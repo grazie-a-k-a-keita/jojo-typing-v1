@@ -30,30 +30,36 @@ const HowToPlayModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div id="overlay">
-          <div id="modalContent">
+        <div id="overlay_02">
+          <div id="modalContent_02">
             <SubHeading subHeading={props.subHeading} />
             <div className="p-8">
-              <p className="font-bold text-sky-700">はじめに</p>
-              <ul className="list-disc">
-                <li>
-                  このサイトはアニメ『ジョジョの奇妙な冒険』モチーフにした、タイピングゲームです。
-                </li>
-                <li>タイピングの練習に役立ててみてください!!</li>
-              </ul>
+              <p className="font-bold text-sky-700 text-center">はじめに</p>
+              <div className="p-4 m-4 border-y-2 border-sky-700/50">
+                <p className="m-2">
+                  ・このサイトはアニメ『ジョジョの奇妙な冒険』モチーフにした、タイピングゲームです。
+                </p>
+                <p className="m-2">
+                  ・タイピングの練習に役立ててみてください!!
+                </p>
+              </div>
             </div>
             <div className="p-8">
-              <p className="font-bold text-sky-700">注意事項</p>
-              <ul className="list-disc">
-                <li>正しい文字を入力すると先に進めます。</li>
-                <li>空白(Spaceキー)は入力する必要はありません。</li>
-                <li>制限時間を過ぎると自動的に終了します。</li>
-                <li>Escキーを押すと、最初からやり直すことができます。</li>
-              </ul>
+              <p className="font-bold text-sky-700 text-center">注意事項</p>
+              <div className="p-4 m-4 border-y-2 border-sky-700/50">
+                <p className="m-2">・正しい文字を入力すると先に進めます。</p>
+                <p className="m-2">
+                  ・空白(Spaceキー)は入力する必要はありません。
+                </p>
+                <p className="m-2">・制限時間を過ぎると自動的に終了します。</p>
+                <p className="m-2">
+                  ・Escキーを押すと、最初からやり直すことができます。
+                </p>
+              </div>
             </div>
             <div className="p-8">
               <button
-                className="button"
+                className="button_small"
                 onMouseEnter={() => buttonHover()}
                 onClick={buttonClick}
               >

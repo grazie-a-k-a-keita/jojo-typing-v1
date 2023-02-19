@@ -51,9 +51,9 @@ const Home = (props) => {
     <>
       {/* ホーム画面部分 */}
       <Header />
-      <div className="w-3/5 mx-auto">
+      <div id="main" className="w-3/5 mx-auto pt-32">
         <MainTitle />
-        <div className="flex justify-center">
+        <div className="flex justify-center py-16">
           <Link
             to="/play1"
             className="button"
@@ -95,7 +95,7 @@ const Home = (props) => {
             5部
           </Link>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center py-16">
           <button
             className="mr-8"
             onMouseEnter={() => buttonHover()}

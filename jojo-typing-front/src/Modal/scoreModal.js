@@ -13,8 +13,8 @@ const ScoreModal = (props) => {
   // HTML
   return (
     <>
-      <div tabIndex={1} id="overlay">
-        <div id="modalContent">
+      <div tabIndex={1} id="overlay_01">
+        <div id="modalContent_01">
           <SubHeading subHeading="SCORE" />
 
           <div className="p-8">
