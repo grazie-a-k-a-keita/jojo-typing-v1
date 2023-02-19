@@ -13,7 +13,7 @@ const TouchToStartModal = (props) => {
   return (
     <>
       {props.showFlag ? (
-        <div id="overlay">
+        <div id="overlay_01">
           <p className="flashText text-5xl">Touch To Start</p>
         </div>
       ) : (
