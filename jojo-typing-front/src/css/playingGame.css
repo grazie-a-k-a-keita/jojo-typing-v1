@@ -1,18 +1,20 @@
 #correctText {
   color: cadetblue;
-  font-size: 20px;
+  font-size: 80%;
 }
 
 #checkText {
   color: darkslategrey;
-  font-size: 30px;
+  font-size: 250%;
   text-align: center;
 }
 
 .gameBox {
+  background-color: white;
   position: relative;
-  padding: 2rem;
+  padding: 5%;
   border-radius: 10px;
   border: 3px solid #333;
   color: #333;
+  margin-top: 30%;
 }

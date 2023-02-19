@@ -1,12 +1,12 @@
 .timeGauge {
   position: relative;
-  height: 1rem;
+  height: 2rem;
   background: #b0c4de;
 }
 
 .timeGauge:before {
   content: "";
-  height: 1rem;
+  height: 2rem;
   background: #eee;
   position: absolute;
   left: 0;
@@ -16,7 +16,7 @@
 .timeGauge:after {
   content: "";
   width: 15px;
-  height: 1rem;
+  height: 2rem;
   background: #191970;
   position: absolute;
   left: 0%;
