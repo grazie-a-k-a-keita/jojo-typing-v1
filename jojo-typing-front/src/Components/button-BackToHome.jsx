@@ -31,7 +31,7 @@ const ButtonBackToHome = (props) => {
     <>
       <Link
         to="/"
-        className="button"
+        className="button_small"
         onClick={() => onClick()}
         onMouseEnter={() => buttonHover()}
       >

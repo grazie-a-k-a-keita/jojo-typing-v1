@@ -59,7 +59,7 @@ const HowToPlayModal = (props) => {
             </div>
             <div className="p-8">
               <button
-                className="button"
+                className="button_small"
                 onMouseEnter={() => buttonHover()}
                 onClick={buttonClick}
               >
