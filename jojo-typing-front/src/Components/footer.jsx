@@ -8,7 +8,7 @@ const Footer = () => {
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 mx-auto">
           <div className="flex flex-col">
             <p className="mx-auto">ご利用規約・プライバシーポリシー</p>
-            <p className="mx-auto">©2022 grazie.</p>
+            <p className="mx-auto">©2023 grazie.</p>
           </div>
         </span>
       </footer>
