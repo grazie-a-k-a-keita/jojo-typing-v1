@@ -183,7 +183,7 @@ const SettingModal = (props) => {
                 onMouseEnter={() => buttonHover()}
                 onClick={buttonClick}
               >
-                OK
+                <p className="text-sky-700">OK</p>
               </button>
             </div>
           </div>
