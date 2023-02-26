@@ -53,7 +53,7 @@ const Home = (props) => {
       <Header />
       <div id="main" className="w-3/5 mx-auto pt-32">
         <MainTitle />
-        <div className="flex justify-center py-16">
+        <div className="flex justify-center py-16 text-2xl">
           <Link
             to="/play1"
             className="button"
@@ -95,7 +95,7 @@ const Home = (props) => {
             5部
           </Link>
         </div>
-        <div className="flex justify-center py-16">
+        <div className="flex justify-center py-16 text-2xl">
           <button
             className="mr-8"
             onMouseEnter={() => buttonHover()}
