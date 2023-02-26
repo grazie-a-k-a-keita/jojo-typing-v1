@@ -1,5 +1,4 @@
 /* 大きいボタン */
-
 .button {
   position: relative;
   display: flex;
@@ -41,4 +40,51 @@
 .button_small:hover {
   transform: translateY(-2px);
   box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
+}
+
+/* 実装待ちボタン */
+.btn {
+  position: relative;
+  display: inline-block;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 12em;
+  height: 6rem;
+  width: 12rem;
+  color: #313131;
+  transition: 0.1s ease-in-out;
+  font-weight: 600;
+  background: #eee;
+  filter: drop-shadow(0px 2px 4px #ccc);
+  border-radius: 3px;
+  cursor: not-allowed;
+  line-height: 6rem; /* 行の高さ(heightと同じ値にする) */
+  overflow: hidden; /* はみ出し部分を隠す */
+}
+
+.btn__text {
+  position: absolute;
+  left: 0;
+  display: block;
+  height: 100%; /* 縦幅をボタンと同じにする */
+  width: 100%; /* 横幅をボタンと同じにする */
+  text-align: center; /* テキストを中央揃え */
+  transition: all 0.3s; /* アニメーション実行時間 */
+}
+
+.btn__text:nth-child(1) {
+  top: 0;
+}
+
+.btn__text:nth-child(2) {
+  top: -100%;
+}
+
+.btn:hover .btn__text:nth-child(1) {
+  top: 100%;
+}
+
+.btn:hover .btn__text:nth-child(2) {
+  top: 0;
 }
