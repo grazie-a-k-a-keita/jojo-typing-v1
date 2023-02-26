@@ -7,6 +7,7 @@ const Score = (props) => {
   return (
     <>
       <Header />
+      <div className="emptyElement"></div>
       <ScoreModal
         se={props.se}
         correctCount={props.correctCount}
