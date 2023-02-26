@@ -60,8 +60,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text">1部</span>
-            <span className="btn__text">実装待ち</span>
+            <span className="btn__text text-sky-700">1部</span>
+            <span className="btn__text text-red-500">実装待ち</span>
           </Link>
           <Link
             // to="/play2"
@@ -69,8 +69,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text">2部</span>
-            <span className="btn__text">実装待ち</span>
+            <span className="btn__text text-sky-700">2部</span>
+            <span className="btn__text text-red-500">実装待ち</span>
           </Link>
           <Link
             to="play3"
@@ -78,7 +78,7 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            3部
+            <span className="text-sky-700">3部</span>
           </Link>
           <Link
             // to="/play4"
@@ -86,8 +86,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text">4部</span>
-            <span className="btn__text">実装待ち</span>
+            <span className="btn__text text-sky-700">4部</span>
+            <span className="btn__text text-red-500">実装待ち</span>
           </Link>
           <Link
             // to="/play5"
@@ -95,8 +95,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text">5部</span>
-            <span className="btn__text">実装待ち</span>
+            <span className="btn__text text-sky-700">5部</span>
+            <span className="btn__text text-red-500">実装待ち</span>
           </Link>
         </div>
         <div className="flex justify-center py-16 text-2xl">
@@ -105,14 +105,18 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             onClick={howToPlayClick}
           >
-            <span className="button">遊び方</span>
+            <span className="button">
+              <p className="text-sky-700">遊び方</p>
+            </span>
           </button>
           <button
             className="ml-8"
             onMouseEnter={() => buttonHover()}
             onClick={settingClick}
           >
-            <span className="button">設定</span>
+            <span className="button">
+              <p className="text-sky-700">設定</p>
+            </span>
           </button>
         </div>
       </div>

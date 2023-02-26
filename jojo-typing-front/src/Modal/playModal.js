@@ -34,7 +34,7 @@ const PlayModal = (props) => {
               </p>
             </div>
             <div className="p-8">
-              <p className="flashText">
+              <p className="flashText text-2xl">
                 Press "Space" or "Enter" key to start!!
               </p>
             </div>

@@ -47,9 +47,18 @@ const HowToPlayModal = (props) => {
             <div className="p-8">
               <p className="font-bold text-sky-700 text-center">注意事項</p>
               <div className="p-4 m-4 border-y-2 border-sky-700/50">
-                <p className="m-2">・正しい文字を入力すると先に進めます。</p>
                 <p className="m-2">
-                  ・空白(Spaceキー)は入力する必要はありません。
+                  ・『ジョジョの奇妙な冒険』に出てくるセリフなどを、
+                  <sapn className="font-medium">英語</sapn>で入力します。
+                </p>
+                <p className="m-2">
+                  ・ランダムに問題文が出題されます。（※2回連続同じ問題が出題される可能性もあります。）
+                </p>
+                <p className="m-2">
+                  ・正しい文字を入力していくと先に進めます。
+                </p>
+                <p className="m-2">
+                  ・空白（Spaceキー）は入力する必要はありません。
                 </p>
                 <p className="m-2">・制限時間を過ぎると自動的に終了します。</p>
                 <p className="m-2">
@@ -63,7 +72,7 @@ const HowToPlayModal = (props) => {
                 onMouseEnter={() => buttonHover()}
                 onClick={buttonClick}
               >
-                戻る
+                <p className="text-sky-700">戻る</p>
               </button>
             </div>
           </div>
