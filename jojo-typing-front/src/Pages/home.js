@@ -55,20 +55,22 @@ const Home = (props) => {
         <MainTitle />
         <div className="flex justify-center py-16 text-2xl">
           <Link
-            to="/play1"
-            className="button"
+            // to="/play1"
+            className="button btn"
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            1部
+            <span class="btn__text">1部</span>
+            <span class="btn__text">実装待ち</span>
           </Link>
           <Link
-            to="/play2"
-            className="button"
+            // to="/play2"
+            className="button btn"
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            2部
+            <span class="btn__text">2部</span>
+            <span class="btn__text">実装待ち</span>
           </Link>
           <Link
             to="play3"
@@ -79,20 +81,22 @@ const Home = (props) => {
             3部
           </Link>
           <Link
-            to="/play4"
-            className="button"
+            // to="/play4"
+            className="button btn"
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            4部
+            <span class="btn__text">4部</span>
+            <span class="btn__text">実装待ち</span>
           </Link>
           <Link
-            to="/play5"
-            className="button"
+            // to="/play5"
+            className="button btn"
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            5部
+            <span class="btn__text">5部</span>
+            <span class="btn__text">実装待ち</span>
           </Link>
         </div>
         <div className="flex justify-center py-16 text-2xl">
