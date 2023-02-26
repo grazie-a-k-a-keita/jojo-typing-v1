@@ -31,6 +31,7 @@ const ScoreModal = (props) => {
   }
   rankTmp = rankTmp - Math.floor(props.missCount / 10);
   const rank = rankdata.rankdata.filter(function (value) {
+    if (0 > rankTmp) rankTmp = 0;
     return value.score === rankTmp;
   });
 
