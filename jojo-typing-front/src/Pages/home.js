@@ -58,7 +58,7 @@ const Home = (props) => {
             // to="/play1"
             className="button btn"
             onMouseEnter={() => buttonHover()}
-            onClick={() => buttonClick()}
+            // onClick={() => buttonClick()}
           >
             <span class="btn__text">1部</span>
             <span class="btn__text">実装待ち</span>
@@ -67,7 +67,7 @@ const Home = (props) => {
             // to="/play2"
             className="button btn"
             onMouseEnter={() => buttonHover()}
-            onClick={() => buttonClick()}
+            // onClick={() => buttonClick()}
           >
             <span class="btn__text">2部</span>
             <span class="btn__text">実装待ち</span>
@@ -84,7 +84,7 @@ const Home = (props) => {
             // to="/play4"
             className="button btn"
             onMouseEnter={() => buttonHover()}
-            onClick={() => buttonClick()}
+            // onClick={() => buttonClick()}
           >
             <span class="btn__text">4部</span>
             <span class="btn__text">実装待ち</span>
@@ -93,7 +93,7 @@ const Home = (props) => {
             // to="/play5"
             className="button btn"
             onMouseEnter={() => buttonHover()}
-            onClick={() => buttonClick()}
+            // onClick={() => buttonClick()}
           >
             <span class="btn__text">5部</span>
             <span class="btn__text">実装待ち</span>

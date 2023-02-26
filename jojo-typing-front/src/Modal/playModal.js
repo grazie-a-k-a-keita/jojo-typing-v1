@@ -8,7 +8,7 @@ import "../css/flashText.css";
 const PlayModal = (props) => {
   // sound
   const [playOnkeyDown] = useSound(
-    `${process.env.PUBLIC_URL}/sounds/SE/承太郎 オラオラ.wav`
+    `${process.env.PUBLIC_URL}/sounds/SE/承太郎 オラオラ.mp3`
   );
   // ゲームをスタートする処理
   window.document.onkeydown = function (event) {
