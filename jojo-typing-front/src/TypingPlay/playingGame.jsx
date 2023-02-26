@@ -49,10 +49,12 @@ const PlayingGame = (props) => {
       } else {
         // ミスした時の処理
         if (props.count !== 60) {
-          props.setMissCount(props.missCount + 1);
-          if (props.missSound === true) {
-            // sound on/off
-            missTypeSound();
+          if (event.key !== "Shift") {
+            props.setMissCount(props.missCount + 1);
+            if (props.missSound === true) {
+              // sound on/off
+              missTypeSound();
+            }
           }
         }
       }
