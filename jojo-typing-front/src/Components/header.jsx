@@ -23,10 +23,11 @@ const Header = () => {
                 className="mr-3 h-6 sm:h-9"
                 alt="Flowbite Logo"
               />
-              <p className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <p className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 JOJOタイピング
               </p>
             </div>
+            <p className="text-right">ver.1.0.0</p>
           </div>
         </nav>
       </header>
