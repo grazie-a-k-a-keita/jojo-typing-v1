@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeading from "../Components/subHeading";
 import ButtonBackToHome from "../Components/button-BackToHome";
-import rankdata from "../testdata/rankdata.json";
+import rankdata from "../data/rankdata.json";
 import "../css/modal.css";
 
 const ScoreModal = (props) => {
