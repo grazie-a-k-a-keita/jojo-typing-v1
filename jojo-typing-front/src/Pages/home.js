@@ -60,8 +60,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span class="btn__text">1部</span>
-            <span class="btn__text">実装待ち</span>
+            <span className="btn__text">1部</span>
+            <span className="btn__text">実装待ち</span>
           </Link>
           <Link
             // to="/play2"
@@ -69,8 +69,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span class="btn__text">2部</span>
-            <span class="btn__text">実装待ち</span>
+            <span className="btn__text">2部</span>
+            <span className="btn__text">実装待ち</span>
           </Link>
           <Link
             to="play3"
@@ -86,8 +86,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span class="btn__text">4部</span>
-            <span class="btn__text">実装待ち</span>
+            <span className="btn__text">4部</span>
+            <span className="btn__text">実装待ち</span>
           </Link>
           <Link
             // to="/play5"
@@ -95,8 +95,8 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span class="btn__text">5部</span>
-            <span class="btn__text">実装待ち</span>
+            <span className="btn__text">5部</span>
+            <span className="btn__text">実装待ち</span>
           </Link>
         </div>
         <div className="flex justify-center py-16 text-2xl">
