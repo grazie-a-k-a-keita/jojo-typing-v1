@@ -22,7 +22,17 @@ const PlayingGame = (props) => {
     .map(function (value) {
       return value.text;
     });
+  var japanese = testdata.testdata
+    .filter(function (value) {
+      return value.part === props.partOfNumber;
+    })
+    .map(function (value) {
+      return value.japanese;
+    });
   const rnd = Math.floor(Math.random() * ProblemText.length);
+  const [japaneseQuestionText, setJapaneseQuestionText] = useState(
+    japanese[rnd]
+  );
   const [correctText, setCorrectText] = useState("");
   const [checkText, setCheckText] = useState(ProblemText[rnd].split(""));
   // タイピング処理
@@ -69,14 +79,16 @@ const PlayingGame = (props) => {
   // 問題文が終了したときの処理
   useEffect(() => {
     if (checkText.length === 0) {
+      setJapaneseQuestionText(japanese[rnd]);
       setCorrectText("");
       setCheckText(ProblemText[rnd].split(""));
     }
-  }, [checkText.length, rnd, ProblemText]);
+  }, [checkText.length, rnd, japanese, ProblemText]);
   // HTML
   return (
     <>
       <div className="gameBox">
+        <p id="japaneseQuestionText">{japaneseQuestionText}</p>
         <p id="checkText" className="break-normal">
           <span id="correctText">{correctText}</span>
           {checkText}

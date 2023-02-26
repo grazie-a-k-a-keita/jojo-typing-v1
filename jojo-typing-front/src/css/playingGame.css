@@ -1,3 +1,8 @@
+#japaneseQuestionText {
+  text-align: center;
+  font-size: 130%;
+}
+
 #correctText {
   color: cadetblue;
   font-size: 80%;
