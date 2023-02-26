@@ -6,36 +6,54 @@ import "../css/modal.css";
 const ScoreModal = (props) => {
   // SCOREデータ
   const rank = "S";
-  const ranking = "18位";
+  const ranking = "18";
   // タイピング速度
   const typeSpeed = props.correctCount / 60;
-  const typeSpeedContext = typeSpeed.toFixed(2) + "/s";
+  const typeSpeedContext = typeSpeed.toFixed(2);
   // HTML
   return (
     <>
-      <div tabIndex={1} id="overlay_01">
-        <div id="modalContent_01">
+      <div tabIndex={1} id="overlay_02">
+        <div id="modalContent_02">
           <SubHeading subHeading="SCORE" />
 
           <div className="p-8">
-            <p className="text-center font-semibold">
-              ランキング：<span>{ranking}</span>
-            </p>
+            <div className="p-4 m-4 border-b-2 border-sky-700/50">
+              <p className="font-bold text-sky-700 text-center mb-2">
+                ランキング
+              </p>
+              <p className="text-center font-semibold">
+                <span className="text-2xl">{ranking}</span> 位
+              </p>
+            </div>
           </div>
-          <div className="p-8">
-            <p className="text-center font-semibold">
-              ランク：<span>{rank}</span>
-            </p>
+          <div className="px-8 pb-8">
+            <div className="p-4 m-4 border-b-2 border-sky-700/50">
+              <p className="font-bold text-sky-700 text-center mb-2">ランク</p>
+              <p className="text-center font-semibold">
+                <span className="text-2xl">{rank}</span> ランク
+              </p>
+            </div>
           </div>
-          <div className="p-8">
-            <p className="text-center font-semibold">
-              タイピング速度：<span>{typeSpeedContext}</span>
-            </p>
+          <div className="px-8 pb-8">
+            <div className="p-4 m-4 border-b-2 border-sky-700/50">
+              <p className="font-bold text-sky-700 text-center mb-2">
+                タイピング速度
+              </p>
+              <p className="text-center font-semibold">
+                <span className="text-2xl">{typeSpeedContext}</span> /s
+              </p>
+            </div>
           </div>
-          <div className="p-8">
-            <p className="text-center font-semibold">
-              ミスタイプ数：<span>{props.missCount}</span>
-            </p>
+          <div className="px-8 pb-8">
+            <div className="p-4 m-4 border-b-2 border-sky-700/50">
+              <p className="font-bold text-sky-700 text-center mb-2">
+                ミスタイプ数
+              </p>
+              <p className="text-center font-semibold">
+                <span className="text-2xl">{props.missCount}</span> 回
+              </p>
+            </div>
           </div>
 
           <div className="p-8">

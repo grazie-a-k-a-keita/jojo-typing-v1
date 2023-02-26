@@ -14,7 +14,9 @@ const TouchToStartModal = (props) => {
     <>
       {props.showFlag ? (
         <div id="overlay_01">
-          <p className="flashText text-5xl">Touch To Start</p>
+          <div className="bg-blue-50/90 rounded-xl p-8">
+            <p className="flashText text-5xl">Touch To Start</p>
+          </div>
         </div>
       ) : (
         <></>
