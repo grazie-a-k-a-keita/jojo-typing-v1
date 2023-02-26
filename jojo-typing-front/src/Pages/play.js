@@ -5,6 +5,7 @@ import TypingPlay from "../TypingPlay/typingPlay";
 import PlayModal from "../Modal/playModal";
 import Header from "../Components/header";
 import Footer from "../Components/footer";
+import "../css/emptyElement.css";
 
 const Play = (props) => {
   // Pathから部数を取得
@@ -67,6 +68,10 @@ const Play = (props) => {
 
       {/* プレイ画面部分 */}
       <Header />
+      <div
+        className="emptyElement"
+        style={{ display: showGame ? "none" : "" }}
+      ></div>
       <div className="w-3/5 mx-auto">
         <TypingPlay
           typeSound={props.typeSound}

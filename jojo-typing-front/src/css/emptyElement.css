@@ -1,0 +1,4 @@
+/* 画面を縮小した際にfooterが上がってくることを防止する空要素 */
+.emptyElement {
+  height: 732px;
+}
