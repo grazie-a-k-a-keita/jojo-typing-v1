@@ -10,24 +10,46 @@ const ScoreModal = (props) => {
   const typeSpeedContext = typeSpeed.toFixed(2);
   // ランク
   let rankTmp;
-  if (0.5 >= typeSpeedContext) {
+  if (1 >= typeSpeedContext) {
     rankTmp = 6;
-  } else if (1 >= typeSpeedContext) {
+  } else if (1.33 >= typeSpeedContext) {
     rankTmp = 7;
-  } else if (2 >= typeSpeedContext) {
+  } else if (1.66 >= typeSpeedContext) {
     rankTmp = 8;
-  } else if (3 >= typeSpeedContext) {
+  } else if (2 >= typeSpeedContext) {
     rankTmp = 9;
-  } else if (4 >= typeSpeedContext) {
+  } else if (2.33 >= typeSpeedContext) {
     rankTmp = 10;
-  } else if (5 >= typeSpeedContext) {
+  } else if (2.66 >= typeSpeedContext) {
     rankTmp = 11;
-  } else if (6 >= typeSpeedContext) {
+  } else if (3 >= typeSpeedContext) {
     rankTmp = 12;
-  } else if (7 >= typeSpeedContext) {
+  } else if (3.33 >= typeSpeedContext) {
     rankTmp = 13;
-  } else {
+  } else if (3.66 >= typeSpeedContext) {
     rankTmp = 14;
+  } else if (4 >= typeSpeedContext) {
+    rankTmp = 15;
+  } else if (4.33 >= typeSpeedContext) {
+    rankTmp = 16;
+  } else if (4.66 >= typeSpeedContext) {
+    rankTmp = 17;
+  } else if (5 >= typeSpeedContext) {
+    rankTmp = 18;
+  } else if (5.33 >= typeSpeedContext) {
+    rankTmp = 19;
+  } else if (5.66 >= typeSpeedContext) {
+    rankTmp = 20;
+  } else if (6 >= typeSpeedContext) {
+    rankTmp = 21;
+  } else if (6.33 >= typeSpeedContext) {
+    rankTmp = 22;
+  } else if (6.66 >= typeSpeedContext) {
+    rankTmp = 23;
+  } else if (7 >= typeSpeedContext) {
+    rankTmp = 24;
+  } else {
+    rankTmp = 25;
   }
   rankTmp = rankTmp - Math.floor(props.missCount / 10);
   const rank = rankdata.rankdata.filter(function (value) {
@@ -64,7 +86,7 @@ const ScoreModal = (props) => {
             <div className="p-4 m-4 border-b-2 border-sky-700/50">
               <p className="font-bold text-sky-700 text-center mb-2">ランク</p>
               <p className="text-center font-semibold">
-                <span className="text-2xl">{rank[0].rank}</span> ランク
+                <span className="text-2xl">{rank[0].rank}</span>
               </p>
             </div>
           </div>
