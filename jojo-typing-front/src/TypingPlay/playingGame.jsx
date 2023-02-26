@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useSound from "use-sound";
 import "../css/playingGame.css";
-import testdata from "../testdata/testdata.json";
+import testdata from "../data/testdata.json";
 
 const PlayingGame = (props) => {
   // sound
