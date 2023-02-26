@@ -3,6 +3,7 @@ import useSound from "use-sound";
 import SubHeading from "../Components/subHeading";
 import "../css/button.css";
 import "../css/modal.css";
+import "../css/checkbox.css";
 
 const SettingModal = (props) => {
   // sound
@@ -69,7 +70,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={onBgm}
                   />
-                  <label htmlFor="onBGM" className="pl-2">
+                  <label htmlFor="onBGM" className="pl-4">
                     あり
                   </label>
                   <input
@@ -80,7 +81,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={offBgm}
                   />
-                  <label htmlFor="offBGM" className="pl-2">
+                  <label htmlFor="offBGM" className="pl-4">
                     なし
                   </label>
                 </div>
@@ -99,7 +100,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={onSe}
                   />
-                  <label htmlFor="onSE" className="pl-2">
+                  <label htmlFor="onSE" className="pl-4">
                     あり
                   </label>
                   <input
@@ -110,7 +111,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={offSe}
                   />
-                  <label htmlFor="offSE" className="pl-2">
+                  <label htmlFor="offSE" className="pl-4">
                     なし
                   </label>
                 </div>
@@ -129,7 +130,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={onType}
                   />
-                  <label htmlFor="onType" className="pl-2">
+                  <label htmlFor="onType" className="pl-4">
                     あり
                   </label>
                   <input
@@ -140,7 +141,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={offType}
                   />
-                  <label htmlFor="offType" className="pl-2">
+                  <label htmlFor="offType" className="pl-4">
                     なし
                   </label>
                 </div>
@@ -159,7 +160,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={onMiss}
                   />
-                  <label htmlFor="onMiss" className="pl-2">
+                  <label htmlFor="onMiss" className="pl-4">
                     あり
                   </label>
                   <input
@@ -170,7 +171,7 @@ const SettingModal = (props) => {
                     readOnly
                     onClick={offMiss}
                   />
-                  <label htmlFor="offMiss" className="pl-2">
+                  <label htmlFor="offMiss" className="pl-4">
                     なし
                   </label>
                 </div>
