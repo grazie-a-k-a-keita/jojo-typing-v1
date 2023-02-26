@@ -15,26 +15,15 @@ const PlayingGame = (props) => {
     { interrupt: true }
   );
   // 問題文生成
-  var ProblemText = testdata.testdata
-    .filter(function (value) {
-      return value.part === props.partOfNumber;
-    })
-    .map(function (value) {
-      return value.text;
-    });
-  var japanese = testdata.testdata
-    .filter(function (value) {
-      return value.part === props.partOfNumber;
-    })
-    .map(function (value) {
-      return value.japanese;
-    });
+  var ProblemText = testdata.testdata.filter(function (value) {
+    return value.part === props.partOfNumber;
+  });
   const rnd = Math.floor(Math.random() * ProblemText.length);
   const [japaneseQuestionText, setJapaneseQuestionText] = useState(
-    japanese[rnd]
+    ProblemText[rnd].japanese
   );
   const [correctText, setCorrectText] = useState("");
-  const [checkText, setCheckText] = useState(ProblemText[rnd].split(""));
+  const [checkText, setCheckText] = useState(ProblemText[rnd].text.split(""));
   // タイピング処理
   useEffect(() => {
     document.onkeydown = function (event) {
@@ -79,11 +68,11 @@ const PlayingGame = (props) => {
   // 問題文が終了したときの処理
   useEffect(() => {
     if (checkText.length === 0) {
-      setJapaneseQuestionText(japanese[rnd]);
+      setJapaneseQuestionText(ProblemText[rnd].japanese);
       setCorrectText("");
-      setCheckText(ProblemText[rnd].split(""));
+      setCheckText(ProblemText[rnd].text.split(""));
     }
-  }, [checkText.length, rnd, japanese, ProblemText]);
+  }, [checkText.length, rnd, ProblemText]);
   // HTML
   return (
     <>
