@@ -1,0 +1,19 @@
+{
+  "rankdata": [
+    { "rank": "F", "score": 0 },
+    { "rank": "E", "score": 1 },
+    { "rank": "E+", "score": 2 },
+    { "rank": "D", "score": 3 },
+    { "rank": "D+", "score": 4 },
+    { "rank": "C", "score": 5 },
+    { "rank": "C+", "score": 6 },
+    { "rank": "B", "score": 7 },
+    { "rank": "B+", "score": 8 },
+    { "rank": "A", "score": 9 },
+    { "rank": "A+", "score": 10 },
+    { "rank": "S", "score": 11 },
+    { "rank": "S+", "score": 12 },
+    { "rank": "SS", "score": 13 },
+    { "rank": "SS+", "score": 14 }
+  ]
+}
