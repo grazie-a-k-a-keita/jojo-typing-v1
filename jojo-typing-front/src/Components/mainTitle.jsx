@@ -1,10 +1,12 @@
 import React from "react";
-import "../css/mainTitle.css";
 
 const MainTitle = () => {
   return (
     <>
-      <p id="mainTitle">JOJOタイピング</p>
+      <img
+        src={`${process.env.PUBLIC_URL}/images/title.png`}
+        alt="Flowbite Logo"
+      ></img>
     </>
   );
 };
