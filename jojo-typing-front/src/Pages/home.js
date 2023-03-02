@@ -61,7 +61,12 @@ const Home = (props) => {
             // onClick={() => buttonClick()}
           >
             <span className="btn__text text-sky-700">1部</span>
-            <span className="btn__text text-red-500">実装待ち</span>
+            <span
+              title="実装待ちです...しばらくお待ちください。"
+              className="btn__text text-red-500"
+            >
+              TBD
+            </span>
           </Link>
           <Link
             // to="/play2"
@@ -70,7 +75,12 @@ const Home = (props) => {
             // onClick={() => buttonClick()}
           >
             <span className="btn__text text-sky-700">2部</span>
-            <span className="btn__text text-red-500">実装待ち</span>
+            <span
+              title="実装待ちです...しばらくお待ちください。"
+              className="btn__text text-red-500"
+            >
+              TBD
+            </span>
           </Link>
           <Link
             to="play3"
@@ -87,7 +97,12 @@ const Home = (props) => {
             // onClick={() => buttonClick()}
           >
             <span className="btn__text text-sky-700">4部</span>
-            <span className="btn__text text-red-500">実装待ち</span>
+            <span
+              title="実装待ちです...しばらくお待ちください。"
+              className="btn__text text-red-500"
+            >
+              TBD
+            </span>
           </Link>
           <Link
             // to="/play5"
@@ -96,7 +111,12 @@ const Home = (props) => {
             // onClick={() => buttonClick()}
           >
             <span className="btn__text text-sky-700">5部</span>
-            <span className="btn__text text-red-500">実装待ち</span>
+            <span
+              title="実装待ちです...しばらくお待ちください。"
+              className="btn__text text-red-500"
+            >
+              TBD
+            </span>
           </Link>
         </div>
         <div className="flex justify-center py-16 text-2xl">
