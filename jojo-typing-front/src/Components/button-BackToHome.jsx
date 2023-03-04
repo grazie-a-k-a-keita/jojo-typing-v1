@@ -35,7 +35,7 @@ const ButtonBackToHome = (props) => {
         onClick={() => onClick()}
         onMouseEnter={() => buttonHover()}
       >
-        <p className="text-sky-700">ホームに戻る</p>
+        <p className="text-white">ホームに戻る</p>
       </Link>
     </>
   );
