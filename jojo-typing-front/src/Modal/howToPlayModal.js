@@ -72,7 +72,7 @@ const HowToPlayModal = (props) => {
                 onMouseEnter={() => buttonHover()}
                 onClick={buttonClick}
               >
-                <p className="text-sky-700">戻る</p>
+                <p className="text-white">戻る</p>
               </button>
             </div>
           </div>

@@ -60,10 +60,10 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text text-sky-700">1部</span>
+            <span className="btn__text text-white">1部</span>
             <span
               title="実装待ちです...しばらくお待ちください。"
-              className="btn__text text-red-500"
+              className="btn__text text-red-400"
             >
               TBD
             </span>
@@ -74,10 +74,10 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text text-sky-700">2部</span>
+            <span className="btn__text text-white">2部</span>
             <span
               title="実装待ちです...しばらくお待ちください。"
-              className="btn__text text-red-500"
+              className="btn__text text-red-400"
             >
               TBD
             </span>
@@ -88,7 +88,7 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             onClick={() => buttonClick()}
           >
-            <span className="text-sky-700">3部</span>
+            <span className="text-white">3部</span>
           </Link>
           <Link
             // to="/play4"
@@ -96,10 +96,10 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text text-sky-700">4部</span>
+            <span className="btn__text text-white">4部</span>
             <span
               title="実装待ちです...しばらくお待ちください。"
-              className="btn__text text-red-500"
+              className="btn__text text-red-400"
             >
               TBD
             </span>
@@ -110,10 +110,10 @@ const Home = (props) => {
             onMouseEnter={() => buttonHover()}
             // onClick={() => buttonClick()}
           >
-            <span className="btn__text text-sky-700">5部</span>
+            <span className="btn__text text-white">5部</span>
             <span
               title="実装待ちです...しばらくお待ちください。"
-              className="btn__text text-red-500"
+              className="btn__text text-red-400"
             >
               TBD
             </span>
@@ -126,7 +126,7 @@ const Home = (props) => {
             onClick={howToPlayClick}
           >
             <span className="button">
-              <p className="text-sky-700">遊び方</p>
+              <p className="text-white">遊び方</p>
             </span>
           </button>
           <button
@@ -135,7 +135,7 @@ const Home = (props) => {
             onClick={settingClick}
           >
             <span className="button">
-              <p className="text-sky-700">設定</p>
+              <p className="text-white">設定</p>
             </span>
           </button>
         </div>
