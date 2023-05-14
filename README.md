@@ -2,7 +2,7 @@
 『ジョジョの奇妙な冒険』モチーフにした、タイピングゲーム
 
 ## URL
-
+[Google](https://www.google.co.jp/)
 jojotyping.net
 
 jojo-typing.web.app
