@@ -2,9 +2,12 @@
 『ジョジョの奇妙な冒険』モチーフにした、タイピングゲーム
 
 ## URL
-- [jojotyping.net](jojotyping.net)
-- [jojo-typing.web.app](jojo-typing.web.app)
-- [jojo-typing.firebaseapp.com](jojo-typing.firebaseapp.com)
+
+jojotyping.net
+
+jojo-typing.web.app
+
+jojo-typing.firebaseapp.com
 
 ## コミットメッセージルール
 - feat: 新しい機能<br>
