@@ -1,5 +1,5 @@
 # JOJO-typing-front
-ジョジョのタイピングゲーム
+『ジョジョの奇妙な冒険』モチーフにした、タイピングゲーム
 
 ## URL
 - jojotyping.net
