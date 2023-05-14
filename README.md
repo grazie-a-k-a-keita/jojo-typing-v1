@@ -1,13 +1,10 @@
-# JOJO-typing-front
+## JOJO-typing-front
 『ジョジョの奇妙な冒険』モチーフにした、タイピングゲーム
 
 ## URL
-[Google](https://www.google.co.jp/)
-jojotyping.net
-
-jojo-typing.web.app
-
-jojo-typing.firebaseapp.com
+- [jojotyping.net](https://jojotyping.net/)
+- [jojo-typing.web.app](https://jojo-typing.web.app/)
+- [jojo-typing.firebaseapp.com](https://jojo-typing.firebaseapp.com/)
 
 ## コミットメッセージルール
 - feat: 新しい機能<br>
