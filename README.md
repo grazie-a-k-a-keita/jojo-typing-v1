@@ -6,7 +6,7 @@
 - [jojo-typing.web.app](https://jojo-typing.web.app/)
 - [jojo-typing.firebaseapp.com](https://jojo-typing.firebaseapp.com/)
 
-## コミットメッセージルール
+## Commit Message rules
 - feat: 新しい機能<br>
 - fix: バグの修正<br>
 - docs: ドキュメントのみの変更<br>
