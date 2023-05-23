@@ -1,10 +1,14 @@
-## JOJOタイピング
+# JOJOタイピング
 『ジョジョの奇妙な冒険』モチーフにした、タイピングゲーム
 
 ## URL
 - [jojotyping.net](https://jojotyping.net/)
 - [jojo-typing.web.app](https://jojo-typing.web.app/)
 - [jojo-typing.firebaseapp.com](https://jojo-typing.firebaseapp.com/)
+
+## Skill
+- React
+- Firebase
 
 ## Commit Message Rules
 - feat: 新しい機能<br>
