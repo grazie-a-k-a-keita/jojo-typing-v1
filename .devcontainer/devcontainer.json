@@ -1,16 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/typescript-node
 {
-  "name": "Node.js & TypeScript",
-  "build": {
-    "dockerfile": "Dockerfile",
-    // Update 'VARIANT' to pick a Node version: 18, 16, 14.
-    // Append -bullseye or -buster to pin to an OS version.
-    // Use -bullseye variants on local on arm64/Apple Silicon.
-    "args": {
-      "VARIANT": "16-bullseye"
-    }
-  },
+  "name": "JOJOtyping",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -19,15 +11,21 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-          "source.fixAll": true
+          "source.organizeImports": true,
+          "source.fixAll.eslint": true
         }
       },
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
+        "dsznajder.es7-react-js-snippets",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "dsznajder.es7-react-js-snippets",
-        "csstools.postcss"
+        "christian-kohler.path-intellisense",
+        "mhutchie.git-graph",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "streetsidesoftware.code-spell-checker"
       ]
     }
   },
