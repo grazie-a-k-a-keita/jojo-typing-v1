@@ -1,10 +1,20 @@
-import React from "react";
-import SubHeading from "../Components/subHeading";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  serverTimestamp,
+} from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import ButtonBackToHome from "../Components/button-BackToHome";
-import rankdata from "../data/rankdata.json";
+import SubHeading from "../Components/subHeading";
 import "../css/modal.css";
+import rankdata from "../data/rankdata.json";
+import db from "../firebase";
 
 const ScoreModal = (props) => {
+  const [ranking, setRanking] = useState(null);
   // タイピング速度
   const typeSpeed = props.correctCount / 60;
   const typeSpeedContext = typeSpeed.toFixed(2);
@@ -57,9 +67,112 @@ const ScoreModal = (props) => {
     return value.score === rankTmp;
   });
 
-  // ランキング
-  // DBが実装されたら追加 ↓↓
-  // const ranking = "18";
+  /**
+   * レコード追加処理
+   * ※1：すべての値が同じレコードが存在する場合はレコード追加を行わない（画面更新の際に二重登録を防ぐため）
+   * ※2：登録済みのレコードが99件以上だった場合、一番古いレコードを削除する
+   * @returns
+   */
+  const addScoreToDB = async () => {
+    try {
+      // 全レコードを取得
+      const queryData = [];
+      const querySnapshot = await getDocs(collection(db, "scores"));
+      querySnapshot.forEach((doc) => {
+        const score = [];
+        score.push(doc.id);
+        score.push(doc.data().score.rank[0].score);
+        score.push(doc.data().score.typeSpeed);
+        score.push(doc.data().score.missCount);
+        score.push(doc.data().score.playDate);
+        queryData.push(score);
+      });
+      // すべての値が同じレコードが存在する場合はレコード追加を行わない
+      for (let index = 0; index < queryData.length; index++) {
+        if (
+          queryData[index][1] === rank[0].score &&
+          queryData[index][2] === typeSpeed &&
+          queryData[index][3] === props.missCount
+        )
+          return;
+      }
+      // レコード追加
+      await addDoc(collection(db, "scores"), {
+        score: {
+          rank,
+          typeSpeed,
+          missCount: props.missCount,
+          playDate: serverTimestamp(),
+        },
+      });
+      // レコードが99件以上だった場合、一番古いレコードを削除する
+      queryData.sort((a, b) => {
+        // "playDate"でソート
+        if (a[4] < b[4]) return -1;
+        if (a[4] > b[4]) return 1;
+        return 0;
+      });
+      for (
+        let deleteCount = queryData.length;
+        deleteCount >= 99;
+        deleteCount--
+      ) {
+        await deleteDoc(doc(db, "scores", queryData[0][0]));
+        queryData.shift();
+      }
+    } catch (error) {
+      console.error("DBの更新中にエラーが発生しました:", error);
+    }
+  };
+
+  const calculationRanking = async () => {
+    try {
+      // 全レコードを取得
+      const queryData = [];
+      const querySnapshot = await getDocs(collection(db, "scores"));
+      querySnapshot.forEach((doc) => {
+        const score = [];
+        score.push(doc.data().score.rank[0].score);
+        score.push(doc.data().score.typeSpeed);
+        score.push(doc.data().score.missCount);
+        queryData.push(score);
+      });
+      queryData.sort((a, b) => {
+        // 「ランクの高い順 => タイピングスピードの速い順 => ミスの少ない順」でソート
+        if (a[0] < b[0]) return 1;
+        if (a[0] > b[0]) return -1;
+        if (a[1] < b[1]) return 1;
+        if (a[1] > b[1]) return -1;
+        if (a[2] < b[2]) return -1;
+        if (a[2] > b[2]) return 1;
+        return 0;
+      });
+      // ランキングを判定
+      for (let index = 0; index < queryData.length; index++) {
+        if (queryData[index][0] <= rank[0].score) {
+          if (queryData[index][1] < typeSpeed) {
+            setRanking(index + 1);
+            break;
+          } else if (queryData[index][1] === typeSpeed) {
+            if (queryData[index][2] >= props.missCount) {
+              setRanking(index + 1);
+              break;
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.error("ランキングの計測中にエラーが発生しました:", error);
+    }
+  };
+
+  useEffect(() => {
+    (async () => {
+      await calculationRanking();
+      await addScoreToDB();
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // HTML
   return (
@@ -74,12 +187,8 @@ const ScoreModal = (props) => {
                 ランキング
               </p>
               <p className="text-center font-semibold">
-                <span>計測中...</span>
-              </p>
-              {/* DBが実装されたら追加 ↓↓ */}
-              {/* <p className="text-center font-semibold">
                 <span className="text-2xl">{ranking}</span> 位
-              </p> */}
+              </p>
             </div>
           </div>
           <div className="px-8 pb-8">
